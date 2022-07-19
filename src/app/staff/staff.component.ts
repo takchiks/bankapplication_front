@@ -1,14 +1,13 @@
 import { StaffService } from './../staff.service';
-import { ANALYZE_FOR_ENTRY_COMPONENTS, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-stuff',
-  templateUrl: './stuff.component.html',
-  styleUrls: ['./stuff.component.css']
+  selector: 'app-staff',
+  templateUrl: './staff.component.html',
+  styleUrls: ['./staff.component.css']
 })
-export class StuffComponent implements OnInit {
-
+export class StaffComponent implements OnInit {
   Beneficiary:any;
   constructor(private router:Router, private staffservice:StaffService) { }
 
@@ -21,6 +20,7 @@ export class StuffComponent implements OnInit {
 
     })
   }
+
   ApproveBeneficiary(id:any){
 
     alert("the id to approve beneficary"+id);
