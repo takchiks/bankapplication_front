@@ -21,7 +21,7 @@ export class StaffComponent implements OnInit {
     })
   }
 
-  ApproveBeneficiary(id:any){
+  approveBeneficiary(id:any){
 
     alert("the id to approve beneficary"+id);
 

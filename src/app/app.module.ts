@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     RegisterComponent,
     HomeComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HeaderComponent,
+    FooterComponent
 
   ],
   imports: [
