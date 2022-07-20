@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ForgotPasswordComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
 
   ],
   imports: [

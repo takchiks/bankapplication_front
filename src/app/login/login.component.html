@@ -1,1 +1,19 @@
 <p>login works!</p>
+<div class=container>
+    <div>
+  
+      
+  <div><h1><b>Login</b></h1></div>
+      <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
+        <mat-form-field class="item" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" ngModel>
+        </mat-form-field><br>
+        <mat-form-field class="item" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" ngModel>
+        </mat-form-field><br>
+        <button class="item" mat-raised-button color="primary">Login</button>
+      </form>
+    </div>
+  </div>
