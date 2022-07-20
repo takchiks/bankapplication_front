@@ -3,46 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StaffComponent } from './staff/staff.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterComponent } from './register/register.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
+import { RegisterCustomerComponent } from './register-customer/register-customer.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
-    StaffComponent,
     LoginComponent,
-    LogoutComponent,
-    DashboardComponent,
-    RegisterComponent,
-    HomeComponent,
-    ForgotPasswordComponent,
-    ApproveBeneficaryComponent
-
+    ApproveBeneficaryComponent,
+    RegisterCustomerComponent,
+    CustomerDashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatButtonToggleModule,
+    HttpClientModule,
+    MatCardModule,
     FormsModule,
-    MatInputModule,
-
-    BrowserAnimationsModule,
-    HttpClientModule
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

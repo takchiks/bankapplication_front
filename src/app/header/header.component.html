@@ -1,0 +1,13 @@
+<p>
+    <mat-toolbar color="primary">
+      <span routerLink="">ESHOP</span>
+      <span class="example-spacer"></span>
+      <!--<a routerLink="/login">Login</a>-->
+      <!--<button mat-button routerLink="/login" *ngIf="!isLoggedIn">Login</button>
+      //<button mat-button *ngIf="isLoggedIn" (click)=handleLogout()>Logout</button>-->
+      <a *ngIf="!this.service.isLoggedIn()" routerLink="/login">Login</a>
+      <a *ngIf="this.service.isLoggedIn()" (click)=handleLogout()>Logout</a>
+  
+      <a *ngIf="!this.service.isLoggedIn()" routerLink="/register">Register</a>
+    </mat-toolbar>
+  </p>
