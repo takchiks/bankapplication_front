@@ -1,42 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { RegisterComponent } from './register/register.component';
-import { StaffComponent } from './staff/staff.component';
+import { RegisterCustomerComponent } from './register-customer/register-customer.component';
+import { HeaderComponent } from './header/header.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+
+
 const routes: Routes = [
   {
-    path:"",
-    component: HomeComponent
-  },
-  {
     path:"login",
-    component: LoginComponent
-  },
-  {
-    path:"logout",
-    component: LogoutComponent
+    component:LoginComponent
   },
   {
     path:"register",
-    component: RegisterComponent
+    component:RegisterCustomerComponent
   },
   {
-    path:"dashboard",
-    component: DashboardComponent
+    path:"",
+    component: CustomerDashboardComponent
   },
-  {
-    path:"staff",
-    component: StaffComponent
-  },
-  {
-    path:"forgot_credentials",
-    component: ForgotPasswordComponent
-  },
-
 ];
 
 @NgModule({

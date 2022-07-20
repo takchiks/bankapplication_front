@@ -1,19 +1,27 @@
-<p>login works!</p>
-<div class=container>
-    <div>
-  
-      
-  <div><h1><b>Login</b></h1></div>
-      <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
-        <mat-form-field class="item" appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput name="username" ngModel>
-        </mat-form-field><br>
-        <mat-form-field class="item" appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" name="password" ngModel>
-        </mat-form-field><br>
-        <button class="item" mat-raised-button color="primary">Login</button>
-      </form>
+<div class="gradient">
+    <h2>Provide your Credentials for Login!!</h2>
+    <div class="form">
+      <form #loginForm = "ngForm" (ngSubmit)="dologin(loginForm.value)">  
+        <div class="username">
+      <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input type="username" matInput name = "username" placeholder="username" required ngModel>
+      </mat-form-field><br>
     </div>
-  </div>
+    <div class="password">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+          <input type="Password" matInput name = "password" placeholder="Password" required ngModel>
+        </mat-form-field><br>
+     </div>
+     <div class="login">
+     <!--  <button mat-raised-button color="primary">Login</button> -->
+     <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+     </div>
+    
+    </form>
+    </div>
+    </div>
+    
+    
+    

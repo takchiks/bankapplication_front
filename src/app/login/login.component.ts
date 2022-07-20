@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-login',
@@ -8,34 +8,38 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  jwtJson:any;
-  
-
-  constructor(private service:UserService, private router:Router) { }
+  user:any;
+  token:any;
+  constructor(private service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   dologin(form:any){
-    console.log("The form is holding "+form.username+", "+ form.password)
-    
-    this.service.token(form).subscribe(res=>{
-      this.jwtJson =res 
-      localStorage.setItem('username',form.username)
-      localStorage.setItem('token',this.jwtJson.jwt)
+    alert("inside do login")
+    //this.isLoggedIn = true;
+    this.service.token(form).subscribe(res=> {
+      alert("the token received is "+res)
 
-      console.log("The token is holding "+this.jwtJson.jwt)
-      console.log("The token is holding "+this.jwtJson)
-      let token:string = this.jwtJson.jwt;
-      this.service.loginUser(token)
-      localStorage.setItem("token",token)
-      this.service.notify({isRefresh:true});
-      
-      this.router.navigate([('/')])
+     // let token = JSON.stringify(res);
+      this.token = res;
+      alert("the token received is "+this.token.jwt)
+      this.service.loginUser(this.token.jwt);
 
+      this.router.navigate([('')]);
+
+      /*this.service.getUser(form.userName).subscribe(res=>{
+        this.user = res;
+        if (form.password == this.user.password){
+          this.router.navigate([("/welcome/"+form.username)]);
+        } else {
+          alert("Please check your details and try again");
+        }
+      })*/
 
     })
   }
+
+  
 
 }
