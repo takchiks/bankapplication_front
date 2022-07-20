@@ -21,17 +21,11 @@ export class StaffComponent implements OnInit {
     })
   }
 
-  ApproveBeneficiary(id:any){
+  ApproveBeneficiary(accountNumber:any){
 
-    alert("the id to approve beneficary"+id);
+    alert("inside approve beneficary page"+accountNumber);
 
-      this.staffservice.approveBeneficiary(id).subscribe(res=>{
-
-          var message =res;
-
-          alert(message)
-
-      })  
+       this.router.navigate([('/approve-beneficary/'+accountNumber)])
     }
 
 }

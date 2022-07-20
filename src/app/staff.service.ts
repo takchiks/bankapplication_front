@@ -17,8 +17,5 @@ export class StaffService {
     return this.http.put(`${this.baseUrl}`+"api/staff/transfer", form);
 
   }
-  approveBeneficiary(id:any){
-   
-    return this.http.post(`${this.baseUrl}`+"api/staff/beneficiary", id)
-  }
+  
 }
