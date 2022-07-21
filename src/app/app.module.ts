@@ -18,6 +18,7 @@ import { ApproveBeneficaryComponent } from './approve-beneficary/approve-benefic
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
+import { StaffLoginComponent } from './staff-login/staff-login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StaffComponent } from './staff/staff.component';
     RegisterCustomerComponent,
     CustomerDashboardComponent,
     HeaderComponent,
-    StaffComponent
+    StaffComponent,
+    StaffLoginComponent
   ],
   imports: [
     BrowserModule,

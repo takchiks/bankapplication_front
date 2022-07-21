@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-dashboard.component.css']
 })
 export class CustomerDashboardComponent implements OnInit {
-
-  constructor() { }
+ben:any;
+  constructor(private customerService:CustomerService) { }
 
   ngOnInit(): void {
+    this.customerService.getBeneficiary().subscribe(res=>{
+      this.ben = res
+
+    });
   }
 
 }

@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { StaffLoginComponent } from './staff-login/staff-login.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,11 @@ const routes: Routes = [
   {
     path: "staff",
     component:StaffComponent
-  }
+  },
+  {
+    path:"staff_login",
+    component: StaffLoginComponent
+  },
 
 ];
 

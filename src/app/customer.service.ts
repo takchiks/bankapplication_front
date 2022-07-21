@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  baseUrl:string = "http://localhost:8080/";
+  baseUrl:string = "http://localhost:9090/";
+  ben:any;
+  header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+  });
+  requestOptions = { headers: this.header };
 
   constructor(private http:HttpClient, private router:Router) { }
 
@@ -56,5 +62,10 @@ export class CustomerService {
   getToken(){
     var token = localStorage.getItem('token');
     return token;
+  }
+  getBeneficiary(){
+    return this.http.get(`${this.baseUrl}`+"api/staff/customer",this.requestOptions);
+
+
   }
 }
