@@ -8,18 +8,24 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
-import { ByAccountNumberComponent } from './by-account-number/by-account-number.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { CustomertransferComponent } from './customertransfer/customertransfer.component';
+import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
+import { CustomerviewaccountComponent } from './customerviewaccount/customerviewaccount.component';
+import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.component';
+import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
@@ -34,7 +40,13 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     HeaderComponent,
     StaffComponent,
     StaffLoginComponent,
-    ByAccountNumberComponent,
+    AddbeneficiaryComponent,
+    RemovebeneficiaryComponent,
+    CustomertransferComponent,
+    CustomerupdateComponent,
+    CustomerviewaccountComponent,
+    AdmincreatestaffComponent,
+    AdminapprovestaffComponent,
     CustomerAccountDetailsComponent,
     CustomerAccountApprovalComponent,
     CustomersRegisteredComponent

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StaffService } from '../staff.service';
 
 @Component({
   selector: 'app-customer-account-approval',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerAccountApprovalComponent implements OnInit {
 
-  constructor() { }
+  accounts: any
+
+  constructor(
+    private staffService: StaffService
+  ) { }
 
   ngOnInit(): void {
+    this.staffService.getAccountsForApproval()
+      .subscribe(data => this.accounts = data )
   }
 
 }
