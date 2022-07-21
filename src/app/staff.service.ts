@@ -30,8 +30,12 @@ export class StaffService {
     return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
   }
   
-  approveCustomerAccount(id:any){
-    return this.http.put(`${this.baseUrl}`+"api/staff/accounts/approve", id)
+  approveCustomerAccount(){
+    return this.http.get(`${this.baseUrl}`+"api/staff/accounts/approve")
+  }
+  
+  getAccountsForApproval(){
+    return this.http.get(`${this.baseUrl}`+"api/staff/accounts/approve", this.requestOptions)
   }
 
   getCustomerAccount(accountNumber:any){

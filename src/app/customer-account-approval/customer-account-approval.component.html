@@ -1,1 +1,11 @@
 <p>customer-account-approval works!</p>
+
+<div class="customerDetails" *ngFor=" let customerAccount of accounts">
+    {{customerAccount.accountNumber}}<br>
+    {{customerAccount.accountType}}<br>
+    {{customerAccount.accountBalance}}<br>
+    {{customerAccount.isApproved}}<br>
+    {{customerAccount.dateOfCreation}}<br>
+    {{customerAccount.status}}<br>
+
+</div>
