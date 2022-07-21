@@ -37,7 +37,7 @@
         <input matInput formControlName="fullName" type="fullname" placeholder="Fullname"  name="fullName" required ngModel>
         <span *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')">Full Name is required</span>
       </mat-form-field>
-      <!-- <mat-form-field appearance="fill">
+       <mat-form-field appearance="fill">
           <mat-label>User Name</mat-label>
           <input matInput name="userName" required ngModel>
           <span *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required','userName')">Password is required</span>
@@ -73,7 +73,7 @@
 </mat-form-field> -->
     <!-- <mat-form-field appearance="fill">
       <mat-label>Phone</mat-label>
-      <input matInput name="phoneNumber" required ngModel>
+      <input type="tel" matInput name="phoneNumber" required ngModel>
     </mat-form-field><br>
     <mat-form-field appearance="fill">
       <mat-label>Secret Question</mat-label>
@@ -81,10 +81,20 @@
     </mat-form-field><br>
     <mat-form-field appearance="fill">
         <mat-label>Secret Answer</mat-label>
+
         <input matInput name="secret_answer" required ngModel>
       </mat-form-field><br> -->
       
     <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+=======
+        <input type="Password" matInput name="secret_answer" required ngModel>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <input matInput name="role" required ngModel>
+      </mat-form-field><br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+>>>>>>> 1d6bde8693b776f7b27b0187779fd4911df9c60e
     </form>
   </div> --> -->
   

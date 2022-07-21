@@ -10,16 +10,23 @@ import { CustomerService } from '../customer.service';
 export class CustomerDashboardComponent implements OnInit {
 
   customer:any;
+  ben:any;
 
   constructor(private service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getCustomer(9).subscribe(res=> {
-      this.customer = res;
-    })
+    // this.service.getCustomer(9).subscribe(res=> {
+    //   this.customer = res;
+    this.service.getBeneficiary().subscribe(res=>{
+      this.ben = res
 
-    this.router.navigate([('/create-account')])
+    });
+this.router.navigate([('/create-account')])
 
 }
+
+
+
+
 
 }
