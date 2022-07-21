@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +15,10 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule }   from '@angular/forms';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ValidateDetailsComponent } from './validate-details/validate-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { FormsModule }   from '@angular/forms';
     LoginComponent,
     RegisterCustomerComponent,
     CustomerDashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateAccountComponent,
+    ForgotPasswordComponent,
+    ValidateDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { FormsModule }   from '@angular/forms';
     HttpClientModule,
     MatCardModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
