@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
-<<<<<<< HEAD
 import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
 import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
 import { CustomertransferComponent } from './customertransfer/customertransfer.component';
@@ -27,11 +26,9 @@ import { CustomerupdateComponent } from './customerupdate/customerupdate.compone
 import { CustomerviewaccountComponent } from './customerviewaccount/customerviewaccount.component';
 import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.component';
 import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
-=======
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
->>>>>>> 764f2679c4dd0f9cab2ea896e89f86ce8ab05ccd
 
 @NgModule({
   declarations: [
@@ -43,19 +40,16 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     HeaderComponent,
     StaffComponent,
     StaffLoginComponent,
-<<<<<<< HEAD
     AddbeneficiaryComponent,
     RemovebeneficiaryComponent,
     CustomertransferComponent,
     CustomerupdateComponent,
     CustomerviewaccountComponent,
     AdmincreatestaffComponent,
-    AdminapprovestaffComponent
-=======
+    AdminapprovestaffComponent,
     CustomerAccountDetailsComponent,
     CustomerAccountApprovalComponent,
     CustomersRegisteredComponent
->>>>>>> 764f2679c4dd0f9cab2ea896e89f86ce8ab05ccd
   ],
   imports: [
     BrowserModule,
