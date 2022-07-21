@@ -1,3 +1,4 @@
+import { ByAccountNumberComponent } from './by-account-number/by-account-number.component';
 import { StaffComponent } from './staff/staff.component';
 import { StaffService } from './staff.service';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
@@ -39,8 +40,13 @@ const routes: Routes = [
     component: StaffLoginComponent
   },
   {
-    path: "/approve-beneficary/+accountNumber",
+    path: "approve-beneficary",
     component: ApproveBeneficaryComponent
+  },
+  {
+    path: "by-account-number",
+    component: ByAccountNumberComponent
+   
   },
   {
     path: "staff",

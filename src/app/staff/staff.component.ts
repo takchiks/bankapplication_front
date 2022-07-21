@@ -17,17 +17,21 @@ export class StaffComponent implements OnInit {
   }
 
     transfer(form:any){
-    alert("values are "+ form.FromAccountNumber+","+ form.ToAccountNumber+",..")
+    alert("values are "+ form.fromAcc+","+ form.toAcc+" "+form.amount+" "+form.reason)
     this.staffservice.transfer(form).subscribe(res=>{
   
     })
     }
   
-    ApproveBeneficiary(accountNumber:any){
+    ApproveBeneficiary(){
   
-      alert("inside approve beneficary page"+accountNumber)
+      alert("inside approve beneficary page")
   
-      this.router.navigate([('/approve-beneficary/'+accountNumber)])
+      this.router.navigate([('/approve-beneficary')])
+    }
+    ByAccountNumber(){
+      alert("inside by account number component")
+      this.router.navigate([('/by-account-number')])
     }
 
     //aproveBeneficiary(accountNumber:any){

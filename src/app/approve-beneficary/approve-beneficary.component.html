@@ -1,8 +1,13 @@
 <p>approve-beneficary works!</p>
 
 
+<div *ngFor= "let benficary of getBeneficary"  >
+    {{benficary.benId}}
+   {{benficary.accountNumber}}
+   {{benficary.accountType}}
 
-{{getBeneficary.benId}}
-{{getBeneficary.accountNumber}}
-{{getBeneficary.accountType}}
-{{getBeneficary}}
+</div>
+
+
+
+

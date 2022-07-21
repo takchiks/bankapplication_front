@@ -17,13 +17,15 @@ export class StaffService {
     return this.http.put(`${this.baseUrl}` + "api/staff/transfer", form);
 
   }
+  byAccountNumber(form:any){
+    return this.http.get(`${this.baseUrl}` + "api/staff/transfer", form);
+  }
 
   getApprovedBeneficiary(){
     return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
   }
   
   
-
   token(form: any) {
     return this.http.post(`${this.baseUrl}` + "api/staff/authenticate", form);
   }
