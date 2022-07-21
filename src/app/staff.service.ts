@@ -18,7 +18,7 @@ export class StaffService {
 
   }
 
-  getApprovedBeneficiary(id:any){
+  getApprovedBeneficiary(){
     return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
   }
   

@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit {
+  accountNumber:any
   Beneficiary:any
   constructor(private router:Router, private staffservice:StaffService) { }
+
 
   ngOnInit(): void {
   }
