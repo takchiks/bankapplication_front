@@ -64,7 +64,7 @@ export class CustomerService {
     return token;
   }
   getBeneficiary(){
-    return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary",this.requestOptions);
+    return this.http.get(`${this.baseUrl}`+"api/staff/customer",this.requestOptions);
 
 
   }
