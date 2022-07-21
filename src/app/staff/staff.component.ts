@@ -34,12 +34,21 @@ export class StaffComponent implements OnInit {
       this.router.navigate([('/by-account-number')])
     }
 
-    //aproveBeneficiary(accountNumber:any){
+    goApproveAccounts(){
+      alert("inside approve customer page")
   
-      //alert("inside approve beneficary page"+accountNumber);
-     
-        // this.router.navigate([('/approve-beneficary/'+accountNumber)])
-   // }
+      this.router.navigate([('/staff/approve/account')])
+    }
+
+    goToAccounts(){
+      alert("inside get customer page")
+
+      this.router.navigate([('/staff/account')])
+    }
+
+    goEnableCustomer(){
+      this.router.navigate
+    }
 }
 
   

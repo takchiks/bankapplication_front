@@ -12,6 +12,8 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
+import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
+import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 
 
 const routes: Routes = [
@@ -51,6 +53,18 @@ const routes: Routes = [
   {
     path: "staff",
     component: StaffComponent
+  },
+  {
+    path: "staff/account",
+    component: CustomerAccountDetailsComponent
+  },
+  {
+    path: "staff/approve/account",
+    component: CustomerAccountApprovalComponent
+  },
+  {
+    path: "staff/enable/customer",
+    component: CustomerAccountApprovalComponent
   },
 ];
 

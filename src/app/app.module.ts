@@ -20,6 +20,9 @@ import {MatCardModule} from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
 import { ByAccountNumberComponent } from './by-account-number/by-account-number.component';
+import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
+import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
+import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ByAccountNumberComponent } from './by-account-number/by-account-number.
     HeaderComponent,
     StaffComponent,
     StaffLoginComponent,
-    ByAccountNumberComponent
+    ByAccountNumberComponent,
+    CustomerAccountDetailsComponent,
+    CustomerAccountApprovalComponent,
+    CustomersRegisteredComponent
   ],
   imports: [
     BrowserModule,
