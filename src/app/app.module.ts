@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ValidateDetailsComponent } from './validate-details/validate-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
@@ -30,6 +33,7 @@ import { CustomerAccountDetailsComponent } from './customer-account-details/cust
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,9 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     RegisterCustomerComponent,
     CustomerDashboardComponent,
     HeaderComponent,
+    CreateAccountComponent,
+    ForgotPasswordComponent,
+    ValidateDetailsComponent,
     StaffComponent,
     StaffLoginComponent,
     AddbeneficiaryComponent,
@@ -62,7 +69,8 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     HttpClientModule,
     MatCardModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

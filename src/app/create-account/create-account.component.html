@@ -1,0 +1,105 @@
+<p>create-account works!</p>
+
+
+<div>
+    <form #accountForm ="ngForm" (ngSubmit) = "createAccount(accountForm.value)">
+      <mat-form-field appearance="fill">
+          <mat-label>Account Type</mat-label>
+          <input matInput name="accountType" required ngModel>
+        </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Account Balance</mat-label>
+    <input matInput name="accountBalance" required ngModel>
+  </mat-form-field><br>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!accountForm.form.valid">Register</button>
+    </form>
+  </div>
+  
+  <!--<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Form</title>
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+       Body of Form starts 
+        <div class="container">
+        <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)" autocomplete="on">
+  
+          <div class="box">
+            <label for="User Name" class="fl fontLabel"> User Name: </label>
+                  <div class="new iconBox">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+                  <div class="fr">
+                          <input type="text" name="username" placeholder="User Name"
+                class="textBox" autofocus="on" required>
+                  </div>
+                  <div class="clr"></div>
+              </div>
+              Username
+         First name
+              <div class="box">
+            <label for="First Name" class="fl fontLabel"> First Name: </label>
+                  <div class="new iconBox">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+                  <div class="fr">
+                          <input type="text" name="firstname" placeholder="First Name"
+                class="textBox" autofocus="on" required>
+                  </div>
+                  <div class="clr"></div>
+              </div>
+              
+              <div class="box">
+            <label for="Last Name" class="fl fontLabel"> Last Name: </label>
+                  <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                  <div class="fr">
+                          <input type="text" required name="lastname"
+                placeholder="Last Name" class="textBox">
+                  </div>
+                  <div class="clr"></div>
+              </div>
+              
+              <div class="box">
+            <label for="phone" class="fl fontLabel"> Phone No.: </label>
+                  <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+                  <div class="fr">
+                          <input type="text" required name="phone" maxlength="10" placeholder="Phone No." class="textBox">
+                  </div>
+                  <div class="clr"></div>
+              </div>
+              
+              <div class="box">
+            <label for="email" class="fl fontLabel"> Email ID: </label>
+                  <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                  <div class="fr">
+                          <input type="email" required name="email" placeholder="Email Id" class="textBox">
+                  </div>
+                  <div class="clr"></div>
+              </div>
+          
+              <div class="box">
+            <label for="password" class="fl fontLabel"> Password </label>
+                  <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+                  <div class="fr">
+                          <input type="Password" required name="password" placeholder="Password" class="textBox">
+                  </div>
+                  <div class="clr"></div>
+              </div>
+              
+              <div class="box" style="background: #2d3e3f">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+              </div>
+              
+        </form>
+    </div>
+    
+    </body>
+  </html> -->
+  
+  
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -7,14 +8,25 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customer-dashboard.component.css']
 })
 export class CustomerDashboardComponent implements OnInit {
-ben:any;
-  constructor(private customerService:CustomerService) { }
+
+  customer:any;
+  ben:any;
+
+  constructor(private service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
-    this.customerService.getBeneficiary().subscribe(res=>{
+    // this.service.getCustomer(9).subscribe(res=> {
+    //   this.customer = res;
+    this.service.getBeneficiary().subscribe(res=>{
       this.ben = res
 
     });
-  }
+this.router.navigate([('/create-account')])
+
+}
+
+
+
+
 
 }

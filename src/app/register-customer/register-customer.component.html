@@ -1,19 +1,77 @@
-
 <div>
-    <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)">
+  <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)">
+    <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput name="userName" required ngModel>
+      </mat-form-field><br>
       <mat-form-field appearance="fill">
+        <mat-label>Full Name</mat-label>
+        <input matInput name="fullName" required ngModel>
+      </mat-form-field><br>
+<mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput name="phoneNumber" required ngModel>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input type="Password" matInput name="passWord" placeholder="Password" required ngModel>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Secret Question</mat-label>
+    <input matInput name="secret_question" required ngModel>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+      <mat-label>Secret Answer</mat-label>
+      <input matInput name="secret_answer" required ngModel>
+    </mat-form-field><br>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+  </form>
+</div>
+<!-- <div>
+    <form [formGroup] ="registerForm" (ngSubmit) = "register(registerForm.value)">
+      <mat-form-field>
+        <input matInput formControlName="userName" type="username" placeholder="Username"  name="userName" required ngModel>
+        <span *ngIf="registerForm.controls['userName'] && registerForm.hasError('required','userName')">Username is required</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="fullName" type="fullname" placeholder="Fullname"  name="fullName" required ngModel>
+        <span *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')">Full Name is required</span>
+      </mat-form-field>
+       <mat-form-field appearance="fill">
           <mat-label>User Name</mat-label>
           <input matInput name="userName" required ngModel>
-        </mat-form-field><br>
-  <mat-form-field appearance="fill">
+          <span *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required','userName')">Password is required</span>
+        </mat-form-field><br> -->
+  <!-- <mat-form-field appearance="fill">
     <mat-label>Full Name</mat-label>
     <input matInput name="fullName" required ngModel>
-  </mat-form-field><br>
-<mat-form-field appearance="fill">
+    <span *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')">Password is required</span>
+  </mat-form-field><br> -->
+<!-- <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
       <input type="Password" matInput name="passWord" placeholder="Password" required ngModel>
-</mat-form-field><br>
-    <mat-form-field appearance="fill">
+</mat-form-field><br> -->
+<!-- <mat-form-field>
+  <input matInput formControlName="passWord" type="password" placeholder="Password"  name="passWord" required ngModel>
+  <span *ngIf="registerForm.controls['passWord'].dirty && registerForm.hasError('required','passWord')">Password is required</span>
+</mat-form-field>
+<mat-form-field>
+  <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm Password"  name="confirmPassword" required ngModel>
+  <span *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('required','confirmPassword')">Confirm Password is required</span>
+</mat-form-field>
+<mat-form-field>
+  <input matInput formControlName="phoneNumber" type="number" placeholder="Phone Number"  name="phoneNumber" required ngModel>
+  <span *ngIf="registerForm.controls['phoneNumber'].dirty && registerForm.hasError('required','phoneNumber')">Phone Number is required</span>
+</mat-form-field>
+<mat-form-field>
+  <input matInput formControlName="secret_question" type="text" placeholder="Secret Question"  name="secret_question" required ngModel>
+  <span *ngIf="registerForm.controls['secret_question'].dirty && registerForm.hasError('required','secret_question')">Secret Question is required</span>
+</mat-form-field>
+<mat-form-field>
+  <input matInput formControlName="secret_answer" type="text" placeholder="Secret Answer"  name="secret_answer" required ngModel>
+  <span *ngIf="registerForm.controls['secret_answer'].dirty && registerForm.hasError('required','secret_answer')">Secret Answer is required</span>
+</mat-form-field> -->
+    <!-- <mat-form-field appearance="fill">
       <mat-label>Phone</mat-label>
       <input type="tel" matInput name="phoneNumber" required ngModel>
     </mat-form-field><br>
@@ -23,6 +81,12 @@
     </mat-form-field><br>
     <mat-form-field appearance="fill">
         <mat-label>Secret Answer</mat-label>
+
+        <input matInput name="secret_answer" required ngModel>
+      </mat-form-field><br> -->
+      
+    <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+=======
         <input type="Password" matInput name="secret_answer" required ngModel>
       </mat-form-field><br>
       <mat-form-field appearance="fill">
@@ -30,8 +94,9 @@
         <input matInput name="role" required ngModel>
       </mat-form-field><br>
     <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+>>>>>>> 1d6bde8693b776f7b27b0187779fd4911df9c60e
     </form>
-  </div>
+  </div> --> -->
   
   <!--<html>
     <head>

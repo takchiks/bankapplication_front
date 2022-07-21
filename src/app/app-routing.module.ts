@@ -1,16 +1,18 @@
+
+import { Component, NgModule } from '@angular/core';
 import { ByAccountNumberComponent } from './by-account-number/by-account-number.component';
 import { StaffComponent } from './staff/staff.component';
 import { StaffService } from './staff.service';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
-import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
-
 import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ValidateDetailsComponent } from './validate-details/validate-details.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 import { StaffLoginComponent } from './staff-login/staff-login.component';
 import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
 import { CustomertransferComponent } from './customertransfer/customertransfer.component';
@@ -21,6 +23,7 @@ import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.c
 import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
+
 
 
 const routes: Routes = [
@@ -37,6 +40,19 @@ const routes: Routes = [
     component: CustomerDashboardComponent
   },
   {
+    path:"create-account",
+    component:CreateAccountComponent
+  },
+  {
+    path:"validate-details",
+    component:ValidateDetailsComponent
+  },
+  {
+    path:"forgot-password",
+    component:ForgotPasswordComponent
+  },{
+
+  
       path:"approve-beneficary/:accountNumber",
       component: ApproveBeneficaryComponent     
   },
