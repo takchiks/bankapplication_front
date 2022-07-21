@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
+import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
+import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
+import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { StaffLoginComponent } from './staff-login/staff-login.component';
     CustomerDashboardComponent,
     HeaderComponent,
     StaffComponent,
-    StaffLoginComponent
+    StaffLoginComponent,
+    CustomerAccountDetailsComponent,
+    CustomerAccountApprovalComponent,
+    CustomersRegisteredComponent
   ],
   imports: [
     BrowserModule,
