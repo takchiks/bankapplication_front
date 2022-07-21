@@ -1,5 +1,7 @@
+import { StaffComponent } from './staff/staff.component';
+import { StaffService } from './staff.service';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //{
@@ -26,6 +28,14 @@ const routes: Routes = [
     path:"",
     component: CustomerDashboardComponent
   },
+  {
+      path:"approve-beneficary/:accountNumber",
+      component: ApproveBeneficaryComponent     
+  },
+  {
+    path: "staff",
+    component:StaffComponent
+  }
 
 ];
 

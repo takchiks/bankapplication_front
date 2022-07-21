@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { StaffComponent } from './staff/staff.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatCardModule} from '@angular/material/card';
     ApproveBeneficaryComponent,
     RegisterCustomerComponent,
     CustomerDashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,

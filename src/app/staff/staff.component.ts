@@ -8,24 +8,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit {
-  Beneficiary:any;
+  Beneficiary:any
   constructor(private router:Router, private staffservice:StaffService) { }
 
   ngOnInit(): void {
   }
 
-  transfer(form:any){
+    transfer(form:any){
     alert("values are "+ form.FromAccountNumber+","+ form.ToAccountNumber+",..")
     this.staffservice.transfer(form).subscribe(res=>{
-
+  
     })
-  }
-
-  ApproveBeneficiary(accountNumber:any){
-
-    alert("inside approve beneficary page"+accountNumber);
-
-       this.router.navigate([('/approve-beneficary/'+accountNumber)])
+    }
+  
+    ApproveBeneficiary(accountNumber:any){
+  
+      alert("inside approve beneficary page"+accountNumber)
+  
+      this.router.navigate([('/approve-beneficary/'+accountNumber)])
     }
 
+    //aproveBeneficiary(accountNumber:any){
+  
+      //alert("inside approve beneficary page"+accountNumber);
+     
+        // this.router.navigate([('/approve-beneficary/'+accountNumber)])
+   // }
 }
+
+  
+
+
