@@ -27,7 +27,7 @@ export class StaffLoginComponent implements OnInit {
       alert("the token received is "+this.token.jwt)
       this.staffService.loginStaff(this.token.jwt);
 
-      this.router.navigate([('')]);
+      this.router.navigate([('staff')]);
 
     })
   }

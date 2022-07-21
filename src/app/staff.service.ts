@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -9,7 +9,15 @@ import { Router } from '@angular/router';
 export class StaffService {
 
   baseUrl:string = "http://localhost:8080/";
-  constructor(private http:HttpClient, private router:Router) { }
+  header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+  });
+
+  requestOptions = { headers: this.header };
+
+  
+  constructor(private http:HttpClient) { }
 
 
   transfer(form: any) {
@@ -22,7 +30,17 @@ export class StaffService {
     return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
   }
   
-  
+  approveCustomerAccount(id:any){
+    return this.http.put(`${this.baseUrl}`+"api/staff/accounts/approve", id)
+  }
+
+  getCustomerAccount(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/staff/account/"+ accountNumber.accountNumber,this.requestOptions)
+  }
+
+  enableCustomer(id:any){
+    return this.http.put(`${this.baseUrl}`+"api/staff/customer", id)
+  }
 
   token(form: any) {
     return this.http.post(`${this.baseUrl}` + "api/staff/authenticate", form);

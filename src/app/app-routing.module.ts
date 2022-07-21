@@ -18,6 +18,8 @@ import { CustomerupdateComponent } from './customerupdate/customerupdate.compone
 import { CustomerviewaccountComponent } from './customerviewaccount/customerviewaccount.component';
 import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.component';
 import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
+import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
+import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 
 
 const routes: Routes = [
@@ -54,6 +56,10 @@ const routes: Routes = [
     component: CustomertransferComponent
   },  
   {
+    path: "approve-beneficary/+accountNumber",
+    component: ApproveBeneficaryComponent
+  },
+  {
     path: "addbeneficiary",
     component: AddbeneficiaryComponent
   }, 
@@ -76,6 +82,17 @@ const routes: Routes = [
   {
     path: "approvestaff",
     component: AdminapprovestaffComponent
+  },{
+    path: "staff/account",
+    component: CustomerAccountDetailsComponent
+  },
+  {
+    path: "staff/approve/account",
+    component: CustomerAccountApprovalComponent
+  },
+  {
+    path: "staff/enable/customer",
+    component: CustomerAccountApprovalComponent
   }
 ];
 
