@@ -11,6 +11,13 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { CustomertransferComponent } from './customertransfer/customertransfer.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
+import { CustomerviewaccountComponent } from './customerviewaccount/customerviewaccount.component';
+import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.component';
+import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
 
 
 const routes: Routes = [
@@ -38,14 +45,38 @@ const routes: Routes = [
     path:"staff_login",
     component: StaffLoginComponent
   },
+  // {
+  //   path: "/approve-beneficary/:accountNumber",
+  //   component: ApproveBeneficaryComponent
+  // },
   {
-    path: "/approve-beneficary/+accountNumber",
-    component: ApproveBeneficaryComponent
+    path: "ctransfer",
+    component: CustomertransferComponent
+  },  
+  {
+    path: "addbeneficiary",
+    component: AddbeneficiaryComponent
+  }, 
+  {
+    path: "removebeneficiary",
+    component: RemovebeneficiaryComponent
   },
   {
-    path: "staff",
-    component: StaffComponent
-  },
+    path: "cupdate",
+    component: CustomerupdateComponent
+  }, 
+  {
+    path: "cview",
+    component: CustomerviewaccountComponent
+  }, 
+  {
+    path: "createstaff",
+    component: AdmincreatestaffComponent
+  }, 
+  {
+    path: "approvestaff",
+    component: AdminapprovestaffComponent
+  }
 ];
 
 @NgModule({
