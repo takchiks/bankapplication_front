@@ -1,5 +1,6 @@
 
 import { Component, NgModule } from '@angular/core';
+import { ByAccountNumberComponent } from './by-account-number/by-account-number.component';
 import { StaffComponent } from './staff/staff.component';
 import { StaffService } from './staff.service';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
@@ -8,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
-
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ValidateDetailsComponent } from './validate-details/validate-details.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -73,7 +73,7 @@ const routes: Routes = [
     component: CustomertransferComponent
   },  
   {
-    path: "approve-beneficary/+accountNumber",
+    path: "approve-beneficary",
     component: ApproveBeneficaryComponent
   },
   {

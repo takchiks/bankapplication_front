@@ -22,12 +22,15 @@ export class StaffService {
 
   transfer(form: any) {
 
-    return this.http.put(`${this.baseUrl}` + "api/staff/transfer", form);
+    return this.http.put(`${this.baseUrl}` + "api/staff/transfer", form,this.requestOptions);
 
   }
+  byAccountNumber(form:any){
+    return this.http.get(`${this.baseUrl}` + "api/staff/transfer", form);
+  }
 
-  getApprovedBeneficiary(id:any){
-    return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
+  getApprovedBeneficiary(){
+    return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary",this.requestOptions)
   }
   
   approveCustomerAccount(){
