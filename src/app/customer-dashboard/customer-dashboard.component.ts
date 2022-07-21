@@ -11,7 +11,10 @@ ben:any;
   constructor(private customerService:CustomerService) { }
 
   ngOnInit(): void {
-    this.ben=this.customerService.getBeneficiary()
+    this.customerService.getBeneficiary().subscribe(res=>{
+      this.ben = res
+
+    });
   }
 
 }
