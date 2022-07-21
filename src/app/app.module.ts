@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { StaffComponent } from './staff/staff.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { StaffLoginComponent } from './staff-login/staff-login.component';
     RegisterCustomerComponent,
     CustomerDashboardComponent,
     HeaderComponent,
+    StaffComponent,
     StaffLoginComponent
   ],
   imports: [

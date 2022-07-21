@@ -18,6 +18,12 @@ export class StaffService {
 
   }
 
+  getApprovedBeneficiary(id:any){
+    return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary")
+  }
+  
+  
+
   token(form: any) {
     return this.http.post(`${this.baseUrl}` + "api/staff/authenticate", form);
   }

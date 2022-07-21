@@ -1,5 +1,7 @@
+import { StaffComponent } from './staff/staff.component';
+import { StaffService } from './staff.service';
 import { ApproveBeneficaryComponent } from './approve-beneficary/approve-beneficary.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -9,7 +11,6 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 import { HeaderComponent } from './header/header.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { StaffLoginComponent } from './staff-login/staff-login.component';
-import { StaffComponent } from './staff/staff.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,15 @@ const routes: Routes = [
     component: CustomerDashboardComponent
   },
   {
-    path: "staff_login",
+      path:"approve-beneficary/:accountNumber",
+      component: ApproveBeneficaryComponent     
+  },
+  {
+    path: "staff",
+    component:StaffComponent
+  },
+  {
+    path:"staff_login",
     component: StaffLoginComponent
   },
   {
