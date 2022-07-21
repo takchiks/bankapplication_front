@@ -4,10 +4,7 @@ import { ApproveBeneficaryComponent } from './approve-beneficary/approve-benefic
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//{
- // path: "/approve-beneficary/+accountNumber",
- // component:ApproveBeneficaryComponent
-//}
+
 
 import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
@@ -18,15 +15,15 @@ import { StaffLoginComponent } from './staff-login/staff-login.component';
 
 const routes: Routes = [
   {
-    path:"login",
-    component:LoginComponent
+    path: "login",
+    component: LoginComponent
   },
   {
-    path:"register",
-    component:RegisterCustomerComponent
+    path: "register",
+    component: RegisterCustomerComponent
   },
   {
-    path:"",
+    path: "",
     component: CustomerDashboardComponent
   },
   {
@@ -41,7 +38,14 @@ const routes: Routes = [
     path:"staff_login",
     component: StaffLoginComponent
   },
-
+  {
+    path: "/approve-beneficary/+accountNumber",
+    component: ApproveBeneficaryComponent
+  },
+  {
+    path: "staff",
+    component: StaffComponent
+  },
 ];
 
 @NgModule({
