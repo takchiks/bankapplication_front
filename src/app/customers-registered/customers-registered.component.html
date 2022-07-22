@@ -1,1 +1,10 @@
 <p>customers-registered works!</p>
+
+<div class="customer" *ngFor=" let customer of customers">
+    <span class="spacer"></span>
+    {{customer.userId}}
+    <span class="spacer"></span>
+    {{customer.fullName}}
+    <span class="spacer"></span>
+    <button (click)="enableCustomer(customer)">Enable</button>
+</div>

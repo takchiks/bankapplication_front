@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  
+  goStaffLogin(){
+    this.router.navigate([('staff_login')])
+  }
 
 }

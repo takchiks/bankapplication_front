@@ -11,13 +11,14 @@ export class StaffLoginComponent implements OnInit {
 
   user:any;
   token:any;
+  errorMsg:any;
+
   constructor(private staffService:StaffService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   dologin(form:any){
-    alert("inside do login")
     //this.isLoggedIn = true;
     this.staffService.token(form).subscribe(res=> {
       alert("the token received is "+res)
@@ -27,9 +28,10 @@ export class StaffLoginComponent implements OnInit {
       alert("the token received is "+this.token.jwt)
       this.staffService.loginStaff(this.token.jwt);
 
-      this.router.navigate([('staff')]);
+      this.router.navigate([('staff')])
 
-    })
+    }, error => this.errorMsg = error.error.message)
+    
   }
 
 }
