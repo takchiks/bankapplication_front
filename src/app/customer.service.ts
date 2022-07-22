@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CustomerService {
-  baseUrl: string = "http://localhost:9090/";
+  baseUrl: string = "http://localhost:8080/";
   ben: any;
   header = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -55,13 +55,13 @@ export class CustomerService {
 
    createAccount(form:any, customerID:any){
     //var customer = this.getUser();
-    return this.http.post(`${this.baseUrl}`+"api/customer/"+customerID+"/account", form);
+    return this.http.post(`${this.baseUrl}`+"api/customer/"+customerID+"/account", form,this.requestOptions);
   }
 
   getUser() {
     alert("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')),this.requestOptions);
   }
 
   getUserID(customer:any){
@@ -126,6 +126,10 @@ export class CustomerService {
   }
   getCustomer(customerId:any) {
     return this.http.get(`${this.baseUrl}`+ "api/customer/"+customerId, this.requestOptions);
+  }
+
+  getAllAccounts(customerId:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+customerId+"/account", this.requestOptions);
   }
 
 }
