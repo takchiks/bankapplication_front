@@ -1,11 +1,12 @@
 <p>customer-account-details works!</p>
 
-<form #accountForm="ngForm" (ngSubmit)="accountDetails(accountForm.value)">
+<form #accountForm="ngForm" (ngSubmit)="accountDetails(accountForm.value);  accountTransaction(accountForm.value);">
 
     <input type="number" matInput name="accountNumber" placeholder="account number" required ngModel>
     <button type="submit" class="btn btn-primary">Go</button>
 
 </form>
+
 
 <div class="customerDetails" *ngIf="customerAccount != null">
     {{customerAccount.accountNumber}}<br>
@@ -16,3 +17,4 @@
     {{customerAccount.status}}<br>
 
 </div>
+

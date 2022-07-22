@@ -1,18 +1,10 @@
 <div class=container>
     <div>
         <div>
-            <h1><b>Add Staff</b></h1>
+            <h1><b>Add Beneficiary</b></h1>
         </div>
         <!-- #addproductform="ngForm" -->
         <form [formGroup]="beneficiaryDetails" (ngSubmit)="addBeneficiary()">
-            <mat-form-field appearance="fill" class="item">
-                <mat-label>Username</mat-label>
-                <input matInput name="userName" formControlName="userName">
-            </mat-form-field><br>
-            <mat-form-field appearance="fill" class="item">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" name="passWord" formControlName="passWord">
-            </mat-form-field><br>
             <mat-form-field appearance="fill" class="item">
                 <mat-label>Account Number</mat-label>
                 <input matInput name="accountNumber" formControlName="accountNumber">
@@ -24,7 +16,14 @@
                     <mat-option value="SAVINGS">SAVINGS</mat-option>
                 </mat-select>
             </mat-form-field><br>
-            <button class="item" mat-raised-button color="primary">Create Staff</button>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Approved</mat-label>
+                <mat-select name="isApproved"  [formControl]="isApproved">
+                    <mat-option value="YES">YES</mat-option>
+                    <mat-option value="NO">NO</mat-option>
+                </mat-select>
+            </mat-form-field><br>
+            <button class="item" mat-raised-button color="primary">Add Beneficiary</button>
         </form>
     </div>
 </div>

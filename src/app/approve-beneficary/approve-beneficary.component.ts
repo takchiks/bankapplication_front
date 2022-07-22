@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./approve-beneficary.component.css']
 })
 export class ApproveBeneficaryComponent implements OnInit {
- getBeneficary:any
+ Beneficaries:any;
+ 
 
   constructor(private route:ActivatedRoute, private staffservice: StaffService) { }
 
@@ -28,11 +29,25 @@ export class ApproveBeneficaryComponent implements OnInit {
 console.log("inside approve bef. comm..")
     this.staffservice.getApprovedBeneficiary().subscribe(res=>{
 
-      this.getBeneficary = res;
+      this.Beneficaries = res;
     })
      
   }
 
+  approveBeneficary(beneficary:any){
+    alert("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
+    beneficary.isApproved = "YES"
+    this.staffservice.approveBeneficaryAccount(new beneficaryRequest(beneficary.benId,beneficary.accountNumber,beneficary.date,beneficary.isApproved ))
+    .subscribe(res=>this.Beneficaries = res)
+
+  }
+
+
+}
+class beneficaryRequest{
+  constructor (private fromCustomer:any, private beneficiaryAcNo:any, private beneficiaryAddedDate:any, private approved:any ){
+
+  }
 }
 
 

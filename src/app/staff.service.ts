@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class StaffService {
 
-  baseUrl:string = "http://localhost:9090/";
+  baseUrl:string = "http://localhost:8080/";
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -24,6 +24,12 @@ export class StaffService {
 
     return this.http.put(`${this.baseUrl}` + "api/staff/transfer", form,this.requestOptions);
 
+  }
+  approveBeneficaryAccount(beneficary:any){
+    return this.http.put(`${this.baseUrl}`+"api/staff/beneficiary", beneficary, this.requestOptions) 
+  }
+  getAccountTransaction(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/staff/account/"+ accountNumber.accountNumber,this.requestOptions)
   }
   byAccountNumber(form:any){
     return this.http.get(`${this.baseUrl}` + "api/staff/transfer", form);
