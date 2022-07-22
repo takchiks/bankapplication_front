@@ -23,6 +23,7 @@ import { AdmincreatestaffComponent } from './admincreatestaff/admincreatestaff.c
 import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaff.component';
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
 
@@ -110,6 +111,10 @@ const routes: Routes = [
   {
     path: "staff/enable/customer",
     component: CustomerAccountApprovalComponent
+  },
+  {
+    path: "adminlogin",
+    component: AdminloginComponent
   }
 ];
 

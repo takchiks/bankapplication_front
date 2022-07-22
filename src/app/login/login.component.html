@@ -1,31 +1,30 @@
 <div class="gradient">
-    <h2>Provide your Credentials for Login!!</h2>
-    <div class="form">
-      <form #loginForm = "ngForm" (ngSubmit)="dologin(loginForm.value)">  
-        <div class="username">
-      <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
-      <input type="username" matInput name = "username" placeholder="username" required ngModel>
-      </mat-form-field><br>
-    </div>
-    <div class="password">
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-          <input type="Password" matInput name = "password" placeholder="Password" required ngModel>
+  <h2>Provide your Credentials for Login!!</h2>
+  <div class="form">
+    <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
+      <div class="username">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="username" matInput name="username" placeholder="username" required ngModel>
         </mat-form-field><br>
-     </div>
-     <div class="login">
-     <!--  <button mat-raised-button color="primary">Login</button> -->
-     <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Submit</button>
-     </div>
-     
-    
+      </div>
+      <div class="password">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="Password" matInput name="password" placeholder="Password" required ngModel>
+        </mat-form-field><br>
+      </div>
+      <div class="login">
+        <!--  <button mat-raised-button color="primary">Login</button> -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+      </div>
+
+
     </form>
+
 
     <button mat-raised-button color="primary" routerLink="/validate-details" >Forgot Password</button>
     <button mat-raised-button color="primary" routerLink="/register" >Not a Customer?Register Yourself!</button>
     </div>
     </div>
-    
-    
     

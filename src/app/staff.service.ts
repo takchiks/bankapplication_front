@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class StaffService {
 
-  baseUrl:string = "http://localhost:8080/";
+  baseUrl:string = "http://localhost:9090/";
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -33,8 +33,8 @@ export class StaffService {
     return this.http.get(`${this.baseUrl}`+"api/staff/beneficiary",this.requestOptions)
   }
   
-  approveCustomerAccount(){
-    return this.http.get(`${this.baseUrl}`+"api/staff/accounts/approve")
+  approveCustomerAccount(account:any){
+    return this.http.put(`${this.baseUrl}`+"api/staff/accounts/approve", account, this.requestOptions)
   }
   
   getAccountsForApproval(){

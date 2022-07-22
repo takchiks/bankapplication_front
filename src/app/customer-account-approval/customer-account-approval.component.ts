@@ -9,7 +9,7 @@ import { StaffService } from '../staff.service';
 export class CustomerAccountApprovalComponent implements OnInit {
 
   accounts: any
-
+  account: any
   constructor(
     private staffService: StaffService
   ) { }
@@ -19,4 +19,9 @@ export class CustomerAccountApprovalComponent implements OnInit {
       .subscribe(data => this.accounts = data )
   }
 
+  approveAccount(account:any){
+    console.log("in approve account")
+    this.staffService.approveCustomerAccount(account)
+      .subscribe(data => this.account = data )
+  }
 }
