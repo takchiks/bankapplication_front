@@ -111,7 +111,7 @@ const routes: Routes = [
   },
   {
     path: "staff/enable/customer",
-    component: CustomerAccountApprovalComponent
+    component: CustomersRegisteredComponent
   },
   {
     path: "adminlogin",
