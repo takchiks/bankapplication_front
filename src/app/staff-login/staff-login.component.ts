@@ -21,11 +21,11 @@ export class StaffLoginComponent implements OnInit {
   dologin(form:any){
     //this.isLoggedIn = true;
     this.staffService.token(form).subscribe(res=> {
-      alert("the token received is "+res)
+      console.log("the token received is "+res)
 
      // let token = JSON.stringify(res);
       this.token = res;
-      alert("the token received is "+this.token.jwt)
+      console.log("the token received is "+this.token.jwt)
       this.staffService.loginStaff(this.token.jwt);
 
       this.router.navigate([('staff')])

@@ -27,7 +27,7 @@ export class RegisterCustomerComponent implements OnInit {
   // })
 
   register(form:any) {
-    alert("inside register() "+form.fullName+", "+form.userName+", "+form.passWord+", "+form.phoneNumber+", "+form.secret_question+", "+form.secret_answer);
+    console.log("inside register() "+form.fullName+", "+form.userName+", "+form.passWord+", "+form.phoneNumber+", "+form.secret_question+", "+form.secret_answer);
 
     this.userService.register(form).subscribe(res=>{
       

@@ -58,11 +58,11 @@ export class CustomerService {
 
    createAccount(form:any, customerID:any){
     //var customer = this.getUser();
-    return this.http.post(`${this.baseUrl}`+"api/customer/"+customerID+"/account", form);
+    return this.http.post(`${this.baseUrl}`+"api/customer/"+customerID+"/account", form,this.requestOptions);
   }
 
   getUser() {
-    alert("inside get user")
+    console.log("inside get user")
     //var token = localStorage.getItem('token');
     return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
   }
@@ -115,7 +115,7 @@ export class CustomerService {
   }
 
   addBeneficiary(customerId: any, beneficary: any) {
-    return this.http.post(`${this.baseUrl}` + "api/customer/" + customerId + "/beneficiary", beneficary, this.requestOptions);
+    return this.http.post(`${this.baseUrl}` + `api/customer/${customerId}/beneficiary`, beneficary, this.requestOptions);
   }
   
   removeBeneficiary(customerId: any, beneficaryId: any) {
@@ -131,11 +131,12 @@ export class CustomerService {
     return this.http.get(`${this.baseUrl}`+ "api/customer/"+customerId, this.requestOptions);
   }
 
+  getAllAccounts(customerId:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+customerId+"/account", this.requestOptions);
+  }
+
 }
 
 class Tokenpojo{
-  token:any;
-  
-  constructor(private tokenc:any){
-    this.token = tokenc;
+  constructor(private token:any){
   }}

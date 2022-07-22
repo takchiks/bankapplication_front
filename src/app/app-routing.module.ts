@@ -24,6 +24,7 @@ import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaf
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
 
@@ -110,7 +111,11 @@ const routes: Routes = [
   },
   {
     path: "staff/enable/customer",
-    component: CustomersRegisteredComponent
+    component: CustomerAccountApprovalComponent
+  },
+  {
+    path: "adminlogin",
+    component: AdminloginComponent
   }
 ];
 

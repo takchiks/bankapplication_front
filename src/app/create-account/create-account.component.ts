@@ -24,7 +24,7 @@ export class CreateAccountComponent implements OnInit {
 
     
     this.userService.createAccount(form,this.customer.userId).subscribe(res2=>{
-      alert("Account Created")
+      console.log("Account Created")
     //})
     })
   })

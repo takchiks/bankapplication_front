@@ -1,10 +1,24 @@
 <p>approve-beneficary works!</p>
 
 
-<div *ngFor= "let benficary of getBeneficary"  >
-    {{benficary.benId}}
-    {{benficary.accountNumber}}
-    {{benficary.accountType}}
-    {{benficary.isApproved}}
- 
+
+
+  <div class = "beneficary Details" *ngFor = "let benficary of Beneficaries">
+   <h2>ACCOUNT INFO</h2>
+   <h3>DATE</h3>  {{benficary.date}}
+   <h3>ACCOUNT NUMBER</h3> {{benficary.accountNumber}} <br>
+   <h3>ACOUNT TYPE</h3> {{benficary.accountType}} <br>
+  
+   {{benficary.isApproved}} 
+   <h3>Benficary ID</h3> {{benficary.benId}} <br>
+   <button (click)="approveBeneficary(benficary)">Approve</button>
  </div>
+
+ <!--form #approveBenefitForm = "ngForm" (ngSubmit) = "approveBeneficary(approveBenefitForm.value)">
+  <mat-form-field appearance="fill">
+    <mat-label>From Account Number</mat-label>
+    <input matInput name = "accountNumber" ngModel>
+  
+  <button mat-raised-button color="primary">Approve</button>
+  </form>
+  </div>-->

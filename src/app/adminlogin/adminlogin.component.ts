@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from '../customer.service';
+import { AdminService } from '../admin.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminloginComponent implements OnInit {
   user:any;
   token:any;
-  constructor(private service:CustomerService, private router:Router) { }
+  constructor(private service:AdminService, private router:Router) { }
+
 
   ngOnInit(): void {
   }
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
       console.log("the token received is "+this.token.jwt)
       this.service.loginUser(this.token.jwt);
 
-      this.router.navigate([('')]);
+      this.router.navigate([('/createstaff')]);
 
       /*this.service.getUser(form.userName).subscribe(res=>{
         this.user = res;
@@ -40,8 +41,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  goStaffLogin(){
-    this.router.navigate([('staff_login')])
-  }
+  
 
 }

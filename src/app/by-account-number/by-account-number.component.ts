@@ -15,7 +15,7 @@ export class ByAccountNumberComponent implements OnInit {
    }
 
    byAccountNumber(form:any){
-    alert("values are "+ form.fromAcc)
+    console.log("values are "+ form.fromAcc)
     this.staffservice.byAccountNumber(form).subscribe(res=>{
   
     })
