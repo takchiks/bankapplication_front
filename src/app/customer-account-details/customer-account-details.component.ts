@@ -25,4 +25,11 @@ export class CustomerAccountDetailsComponent implements OnInit {
       {this.customerAccount = data 
         console.log(this.customerAccount.accountNumber) })
   }
+  accountTransaction(form:any){
+    alert("showing account transaction")
+    this.staffService.getAccountTransaction(form).subscribe(res=>{
+      this.accountNumber = res;
+
+    })
+  }
 }

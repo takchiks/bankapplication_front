@@ -17,7 +17,7 @@ export class ApproveBeneficaryComponent implements OnInit {
 
    // this.route.paramMap.subscribe(res=>{
 
-      // alert('the data fetched from the url is ')
+      // console.log('the data fetched from the url is ')
        
        // var id = res.get("benId")
 
@@ -26,7 +26,7 @@ export class ApproveBeneficaryComponent implements OnInit {
         //  this.getBeneficary =res;
         //})
     //})
-    alert("inside approve bef. comm..")
+console.log("inside approve bef. comm..")
     this.staffservice.getApprovedBeneficiary().subscribe(res=>{
 
       this.Beneficaries = res;

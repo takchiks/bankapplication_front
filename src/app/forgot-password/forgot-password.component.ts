@@ -17,10 +17,10 @@ export class ForgotPasswordComponent implements OnInit {
   doreset(form:any){
     this.service.doreset(form).subscribe(res=>{
       this.customer = res;
-      alert(this.customer)
-      //alert("not valid")
+      console.log(this.customer)
+      //console.log("not valid")
       //if(this.customer == "Sorry your secret details are not matching"){
-        //alert("not valid");
+        //console.log("not valid");
       //}
       this.router.navigate([('/login')]);
     })

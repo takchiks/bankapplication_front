@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addbeneficiary.component.css']
 })
 export class AddbeneficiaryComponent implements OnInit {
+  beneficiaryDetails:any
+  accountType:any
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  addBeneficiary(){}
 }

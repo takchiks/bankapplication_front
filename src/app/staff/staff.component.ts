@@ -17,7 +17,7 @@ export class StaffComponent implements OnInit {
   }
 
     transfer(form:any){
-    alert("values are "+ form.fromAcc+","+ form.toAcc+" "+form.amount+" "+form.reason)
+    console.log("values are "+ form.fromAcc+","+ form.toAcc+" "+form.amount+" "+form.reason)
     this.staffservice.transfer(form).subscribe(res=>{
   
     })
@@ -25,23 +25,23 @@ export class StaffComponent implements OnInit {
   
     ApproveBeneficiary(){
   
-      alert("inside approve beneficary page")
+      console.log("inside approve beneficary page")
   
       this.router.navigate([('/approve-beneficary')])
     }
     ByAccountNumber(){
-      alert("inside by account number component")
+      console.log("inside by account number component")
       this.router.navigate([('/by-account-number')])
     }
 
     goApproveAccounts(){
-      alert("inside approve customer page")
+      console.log("inside approve customer page")
   
       this.router.navigate([('/staff/approve/account')])
     }
 
     goToAccounts(){
-      alert("inside get customer page")
+      console.log("inside get customer page")
 
       this.router.navigate([('/staff/account')])
     }

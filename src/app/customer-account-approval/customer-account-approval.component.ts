@@ -20,7 +20,7 @@ export class CustomerAccountApprovalComponent implements OnInit {
   }
 
   approveAccount(account:any){
-    alert("in approve account")
+    console.log("in approve account")
     this.staffService.approveCustomerAccount(account)
       .subscribe(data => this.account = data )
   }
