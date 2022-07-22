@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CustomerService {
-  baseUrl: string = "http://localhost:8080/";
+  baseUrl: string = "http://localhost:9090/";
   ben: any;
   header = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export class CustomerService {
   getUser() {
     console.log("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')),this.requestOptions);
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
   }
 
   getUserID(customer:any){
@@ -112,7 +112,7 @@ export class CustomerService {
   }
 
   addBeneficiary(customerId: any, beneficary: any) {
-    return this.http.post(`${this.baseUrl}` + "api/customer/" + customerId + "/beneficiary", beneficary, this.requestOptions);
+    return this.http.post(`${this.baseUrl}` + `api/customer/${customerId}/beneficiary`, beneficary, this.requestOptions);
   }
   
   removeBeneficiary(customerId: any, beneficaryId: any) {
@@ -135,8 +135,5 @@ export class CustomerService {
 }
 
 class Tokenpojo{
-  token:any;
-  
-  constructor(private tokenc:any){
-    this.token = tokenc;
+  constructor(private token:any){
   }}
