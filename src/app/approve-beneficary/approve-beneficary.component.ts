@@ -14,16 +14,25 @@ export class ApproveBeneficaryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe(res=>{
-       alert('the data fetched from the url is ')
+   // this.route.paramMap.subscribe(res=>{
+
+      // alert('the data fetched from the url is ')
        
        // var id = res.get("benId")
 
-        this.staffservice.getApprovedBeneficiary().subscribe(res=>{
+       // this.staffservice.getApprovedBeneficiary().subscribe(res=>{
+//
+        //  this.getBeneficary =res;
+        //})
+    //})
+alert("inside approve bef. comm..")
+    this.staffservice.getApprovedBeneficiary().subscribe(res=>{
 
-          this.getBeneficary =res;
-        })
+      this.getBeneficary = res;
     })
+     
   }
 
 }
+
+
