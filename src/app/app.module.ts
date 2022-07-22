@@ -34,7 +34,8 @@ import { CustomerAccountApprovalComponent } from './customer-account-approval/cu
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import {MatSelectModule} from '@angular/material/select';
-
+import { MatTableModule } from '@angular/material/table'  
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,9 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
