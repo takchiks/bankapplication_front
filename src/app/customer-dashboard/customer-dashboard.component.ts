@@ -12,6 +12,7 @@ export class CustomerDashboardComponent implements OnInit {
   customer:any;
   ben:any;
   accounts:any;
+  selection:any;
 
   constructor(private service:CustomerService, private router:Router) { }
 
@@ -33,7 +34,26 @@ export class CustomerDashboardComponent implements OnInit {
 
 }
 
+createAccount(form:any){
+  this.service.getUser().subscribe(res=>{
+    this.customer = res;
+  
+  //this.userService.getUserID(this.customer).subscribe(res1 =>{
 
+  
+  this.service.createAccount(form,this.customer.userId).subscribe(res2=>{
+    console.log("Account Created")
+  //})
+  })
+})
+
+}
+
+selectButton(num:any){
+  alert("hit select button")
+  this.selection==num;
+  alert(this.selection)
+}
 
 
 

@@ -1,3 +1,85 @@
+<!-- <div class="readersack">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Register yourself here</h3>
+        {{success?"Success - "+success:""}}
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>User Name</label>
+            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+              <div *ngIf="f.userName.errors.required">User Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+            <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+              <div *ngIf="f.fullName.errors.required">Full Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="number" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+            <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+              <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+              <div *ngIf="f.phoneNumber.errors.number">Phone number must be a valid number</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" formControlName="passWord" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passWord.errors }" />
+            <div *ngIf="submitted && f.passWord.errors" class="invalid-feedback">
+              <div *ngIf="f.passWord.errors.required">Password is required</div>
+              <div *ngIf="f.passWord.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+              <div *ngIf="f.confirmPassword.errors.mustMatch">Password and confirm not match</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Secret Question</label>
+            <input type="text" formControlName="secret_question" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secret_question.errors }" />
+            <div *ngIf="submitted && f.secret_question.errors" class="invalid-feedback">
+              <div *ngIf="f.secret_question.errors.required">Secret Question is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Secret Answer</label>
+            <input type="text" formControlName="secret_answer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secret_answer.errors }" />
+            <div *ngIf="submitted && f.secret_answer.errors" class="invalid-feedback">
+              <div *ngIf="f.secret_answer.errors.required">Secret Answer is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+  <p>
+    <a href="#" target="_top">Angular
+      12 - Reactive Forms Validation and confirm password Example</a>
+  </p>
+  <p>
+    <a href="https://readerstacks.com" target="_top">readerstacks.com</a>
+  </p>
+</div> -->
+
+
+
+
 <div>
   <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)">
     <mat-form-field appearance="fill">
@@ -27,161 +109,3 @@
   <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
   </form>
 </div>
-<!-- <div>
-    <form [formGroup] ="registerForm" (ngSubmit) = "register(registerForm.value)">
-      <mat-form-field>
-        <input matInput formControlName="userName" type="username" placeholder="Username"  name="userName" required ngModel>
-        <span *ngIf="registerForm.controls['userName'] && registerForm.hasError('required','userName')">Username is required</span>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="fullName" type="fullname" placeholder="Fullname"  name="fullName" required ngModel>
-        <span *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')">Full Name is required</span>
-      </mat-form-field>
-       <mat-form-field appearance="fill">
-          <mat-label>User Name</mat-label>
-          <input matInput name="userName" required ngModel>
-          <span *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required','userName')">Password is required</span>
-        </mat-form-field><br> -->
-  <!-- <mat-form-field appearance="fill">
-    <mat-label>Full Name</mat-label>
-    <input matInput name="fullName" required ngModel>
-    <span *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')">Password is required</span>
-  </mat-form-field><br> -->
-<!-- <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
-      <input type="Password" matInput name="passWord" placeholder="Password" required ngModel>
-</mat-form-field><br> -->
-<!-- <mat-form-field>
-  <input matInput formControlName="passWord" type="password" placeholder="Password"  name="passWord" required ngModel>
-  <span *ngIf="registerForm.controls['passWord'].dirty && registerForm.hasError('required','passWord')">Password is required</span>
-</mat-form-field>
-<mat-form-field>
-  <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm Password"  name="confirmPassword" required ngModel>
-  <span *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('required','confirmPassword')">Confirm Password is required</span>
-</mat-form-field>
-<mat-form-field>
-  <input matInput formControlName="phoneNumber" type="number" placeholder="Phone Number"  name="phoneNumber" required ngModel>
-  <span *ngIf="registerForm.controls['phoneNumber'].dirty && registerForm.hasError('required','phoneNumber')">Phone Number is required</span>
-</mat-form-field>
-<mat-form-field>
-  <input matInput formControlName="secret_question" type="text" placeholder="Secret Question"  name="secret_question" required ngModel>
-  <span *ngIf="registerForm.controls['secret_question'].dirty && registerForm.hasError('required','secret_question')">Secret Question is required</span>
-</mat-form-field>
-<mat-form-field>
-  <input matInput formControlName="secret_answer" type="text" placeholder="Secret Answer"  name="secret_answer" required ngModel>
-  <span *ngIf="registerForm.controls['secret_answer'].dirty && registerForm.hasError('required','secret_answer')">Secret Answer is required</span>
-</mat-form-field> -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Phone</mat-label>
-      <input type="tel" matInput name="phoneNumber" required ngModel>
-    </mat-form-field><br>
-    <mat-form-field appearance="fill">
-      <mat-label>Secret Question</mat-label>
-      <input matInput name="secret_question" required ngModel>
-    </mat-form-field><br>
-    <mat-form-field appearance="fill">
-        <mat-label>Secret Answer</mat-label>
-
-        <input matInput name="secret_answer" required ngModel>
-      </mat-form-field><br> -->
-      
-    <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
-=======
-        <input type="Password" matInput name="secret_answer" required ngModel>
-      </mat-form-field><br>
-      <mat-form-field appearance="fill">
-        <mat-label>Role</mat-label>
-        <input matInput name="role" required ngModel>
-      </mat-form-field><br>
-    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
->>>>>>> 1d6bde8693b776f7b27b0187779fd4911df9c60e
-    </form>
-  </div> --> -->
-  
-  <!--<html>
-    <head>
-      <meta charset="utf-8">
-      <title>Form</title>
-      
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-       Body of Form starts 
-        <div class="container">
-        <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)" autocomplete="on">
-  
-          <div class="box">
-            <label for="User Name" class="fl fontLabel"> User Name: </label>
-                  <div class="new iconBox">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-                  <div class="fr">
-                          <input type="text" name="username" placeholder="User Name"
-                class="textBox" autofocus="on" required>
-                  </div>
-                  <div class="clr"></div>
-              </div>
-              Username
-         First name
-              <div class="box">
-            <label for="First Name" class="fl fontLabel"> First Name: </label>
-                  <div class="new iconBox">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-                  <div class="fr">
-                          <input type="text" name="firstname" placeholder="First Name"
-                class="textBox" autofocus="on" required>
-                  </div>
-                  <div class="clr"></div>
-              </div>
-              
-              <div class="box">
-            <label for="Last Name" class="fl fontLabel"> Last Name: </label>
-                  <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-                  <div class="fr">
-                          <input type="text" required name="lastname"
-                placeholder="Last Name" class="textBox">
-                  </div>
-                  <div class="clr"></div>
-              </div>
-              
-              <div class="box">
-            <label for="phone" class="fl fontLabel"> Phone No.: </label>
-                  <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
-                  <div class="fr">
-                          <input type="text" required name="phone" maxlength="10" placeholder="Phone No." class="textBox">
-                  </div>
-                  <div class="clr"></div>
-              </div>
-              
-              <div class="box">
-            <label for="email" class="fl fontLabel"> Email ID: </label>
-                  <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                  <div class="fr">
-                          <input type="email" required name="email" placeholder="Email Id" class="textBox">
-                  </div>
-                  <div class="clr"></div>
-              </div>
-          
-              <div class="box">
-            <label for="password" class="fl fontLabel"> Password </label>
-                  <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
-                  <div class="fr">
-                          <input type="Password" required name="password" placeholder="Password" class="textBox">
-                  </div>
-                  <div class="clr"></div>
-              </div>
-              
-              <div class="box" style="background: #2d3e3f">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
-              </div>
-              
-        </form>
-    </div>
-    
-    </body>
-  </html> -->
-  
-  
-
-
