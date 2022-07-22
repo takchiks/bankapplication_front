@@ -59,7 +59,7 @@ export class CustomerService {
   }
 
   getUser() {
-    alert("inside get user")
+    console.log("inside get user")
     //var token = localStorage.getItem('token');
     return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
   }

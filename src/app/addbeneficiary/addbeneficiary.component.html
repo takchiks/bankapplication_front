@@ -1,1 +1,30 @@
-<p>addbeneficiary works!</p>
+<div class=container>
+    <div>
+        <div>
+            <h1><b>Add Staff</b></h1>
+        </div>
+        <!-- #addproductform="ngForm" -->
+        <form [formGroup]="beneficiaryDetails" (ngSubmit)="addBeneficiary()">
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Username</mat-label>
+                <input matInput name="userName" formControlName="userName">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="passWord" formControlName="passWord">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Account Number</mat-label>
+                <input matInput name="accountNumber" formControlName="accountNumber">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Account Type</mat-label>
+                <mat-select name="accountType"  [formControl]="accountType">
+                    <mat-option value="CURRENT">CURRENT</mat-option>
+                    <mat-option value="SAVINGS">SAVINGS</mat-option>
+                </mat-select>
+            </mat-form-field><br>
+            <button class="item" mat-raised-button color="primary">Create Staff</button>
+        </form>
+    </div>
+</div>

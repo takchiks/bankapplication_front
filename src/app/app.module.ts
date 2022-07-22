@@ -32,6 +32,8 @@ import { AdminapprovestaffComponent } from './adminapprovestaff/adminapprovestaf
 import { CustomerAccountDetailsComponent } from './customer-account-details/customer-account-details.component';
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     AdminapprovestaffComponent,
     CustomerAccountDetailsComponent,
     CustomerAccountApprovalComponent,
-    CustomersRegisteredComponent
+    CustomersRegisteredComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,8 @@ import { CustomersRegisteredComponent } from './customers-registered/customers-r
     MatCardModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

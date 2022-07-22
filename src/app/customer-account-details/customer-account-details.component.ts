@@ -20,7 +20,7 @@ export class CustomerAccountDetailsComponent implements OnInit {
   }
 
   accountDetails(form:any){
-    alert()
+    console.log()
     this.staffService.getCustomerAccount(form).subscribe(data => 
       {this.customerAccount = data 
         console.log(this.customerAccount.accountNumber) })
