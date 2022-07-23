@@ -48,6 +48,7 @@ const routes: Routes = [
   {
     path:"create-account",
     component:CreateAccountComponent
+    // component: CustomerDashboardComponent
   },
   {
     path:"validate-details",
@@ -115,7 +116,7 @@ const routes: Routes = [
   },
   {
     path: "staff/enable/customer",
-    component: CustomerAccountApprovalComponent
+    component: CustomersRegisteredComponent
   },
   {
     path: "adminlogin",

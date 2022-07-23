@@ -64,7 +64,7 @@ export class CustomerService {
   getUser() {
     console.log("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')), this.requestOptions);
   }
 
   getUserID(customer:any){
@@ -135,6 +135,18 @@ export class CustomerService {
 
   getAllAccounts(customerId:any){
     return this.http.get(`${this.baseUrl}`+"api/customer/"+customerId+"/account", this.requestOptions);
+  }
+
+  getAllTransactions(customerId:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+customerId+"/transaction1", this.requestOptions);
+  }
+
+  getCustomerAccount(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/account/"+ accountNumber.accountNumber,this.requestOptions)
+  }
+
+  getAccountTransaction(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+accountNumber+"/transaction2",this.requestOptions)
   }
 
 }

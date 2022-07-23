@@ -5,14 +5,17 @@
     <form #accountForm ="ngForm" (ngSubmit) = "createAccount(accountForm.value)">
       <mat-form-field appearance="fill">
           <mat-label>Account Type</mat-label>
-          <input matInput name="accountType" required ngModel>
+          <mat-select name="accountType" required ngModel>
+            <mat-option value="CURRENT">CURRENT</mat-option>
+            <mat-option value="SAVINGS">SAVINGS</mat-option>
+        </mat-select>
         </mat-form-field><br>
   <mat-form-field appearance="fill">
     <mat-label>Account Balance</mat-label>
     <input matInput name="accountBalance" required ngModel>
   </mat-form-field><br>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!accountForm.form.valid">Register</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!accountForm.form.valid">Create Account</button>
     </form>
   </div>
   
