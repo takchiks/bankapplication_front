@@ -18,3 +18,15 @@
 
 </div>
 
+<br><br>
+<div *ngFor = "let tansaction of accountNumber" >
+
+    {{tansaction.date}}
+    {{tansaction.reference}}
+    {{tansaction.amount}}
+    {{tansaction.toAcc}}
+    {{tansaction.fromAcc}}
+    {{tansaction.reason}}
+    {{tansaction.paymentType}}
+</div>
+

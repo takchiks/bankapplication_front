@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { Router } from '@angular/router';
+import { catchError } from 'rxjs';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,12 @@ export class StaffService {
   });
 
   requestOptions = { headers: this.header };
-
   
   constructor(private http:HttpClient) { }
 
+  errorHandler(error: HttpErrorResponse){
+    return throwError(() => error.message || "Server Error");
+  }
 
   transfer(form: any) {
 
@@ -29,6 +31,9 @@ export class StaffService {
     return this.http.put(`${this.baseUrl}`+"api/staff/beneficiary", beneficary, this.requestOptions) 
   }
   getAccountTransaction(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/staff/"+accountNumber+"/transaction2",this.requestOptions)
+  }
+  getAccountTransaction1(accountNumber:any){
     return this.http.get(`${this.baseUrl}`+"api/staff/account/"+ accountNumber.accountNumber,this.requestOptions)
   }
   byAccountNumber(form:any){
@@ -51,8 +56,12 @@ export class StaffService {
     return this.http.get(`${this.baseUrl}`+"api/staff/account/"+ accountNumber.accountNumber,this.requestOptions)
   }
 
-  enableCustomer(id:any){
-    return this.http.put(`${this.baseUrl}`+"api/staff/customer", id)
+  getAllCustomers(){
+    return this.http.get(`${this.baseUrl}`+"api/staff/customer",this.requestOptions)
+  }
+
+  enableCustomer(customer:any){
+    return this.http.put(`${this.baseUrl}`+"api/staff/customer", customer, this.requestOptions)
   }
 
   token(form: any) {
@@ -83,11 +92,13 @@ export class StaffService {
 
   getStaff() {
     var token = this.getToken();
-    return this.http.post(`${this.baseUrl}` + "api/staff/getuser/", token);
+    return this.http.post(`${this.baseUrl}` + "api/staff/getuser/", token, this.requestOptions)
+                    .pipe(catchError(this.errorHandler))
   }
 
   getToken() {
     var token = localStorage.getItem('token');
     return token;
   }
+
 }

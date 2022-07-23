@@ -1,6 +1,7 @@
 <div class="gradient">
   <h2>Provide your Credentials for Login!!</h2>
   <div class="form">
+    <button (click)="goStaffLogin()">Staff Corner</button>
     <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
       <div class="username">
         <mat-form-field appearance="fill">

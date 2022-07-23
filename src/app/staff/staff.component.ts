@@ -47,7 +47,7 @@ export class StaffComponent implements OnInit {
     }
 
     goEnableCustomer(){
-      this.router.navigate
+      this.router.navigate([('staff/enable/customer')])
     }
 }
 

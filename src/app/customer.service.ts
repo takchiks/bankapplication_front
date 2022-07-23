@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,9 @@ export class CustomerService {
 
   constructor(private http:HttpClient, private router: Router) { }
 
-  
-
+  /* errorHandler(error: HttpErrorResponse){
+    return throwError(() => error.message || "Server Error");
+  } */
 
   register(form: any) {
     return this.http.post(`${this.baseUrl}` + "api/customer/register", form);

@@ -1,5 +1,7 @@
 <div class="gradient">
     <h2>Provide your Credentials for Login!!</h2>
+
+    <h3>{{errorMsg}}</h3>
     <div class="form">
         <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
             <div class="username">
@@ -17,7 +19,7 @@
             <div class="login">
                 <!--  <button mat-raised-button color="primary">Login</button> -->
                 <button mat-raised-button color="primary" type="submit"
-                    [disabled]="!loginForm.form.valid">Submit</button>
+                    [disabled]="!loginForm.form.valid">Login</button>
             </div>
 
         </form>
