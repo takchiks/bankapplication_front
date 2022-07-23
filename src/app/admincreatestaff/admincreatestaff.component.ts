@@ -31,8 +31,8 @@ export class AdmincreatestaffComponent implements OnInit {
   createStaff(){
     var fullName = this.adminDetails.controls.fullName.value;
     var userName = this.adminDetails.controls.userName.value;
-    var role = this.role.value
-    var status = this.status.value
+    var role = "STAFF"
+    var status = "DISABLE"
     var passWord = this.adminDetails.controls.passWord.value
     console.log(new StaffPojo(fullName,userName,passWord,role,status))
     this.adminService.createStaff(new StaffPojo(fullName,userName,passWord,role,status)).subscribe(res=>{

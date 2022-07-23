@@ -42,6 +42,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: "customerdashboard",
+    component: CustomerDashboardComponent
+  },
+  {
     path:"create-account",
     component:CreateAccountComponent
   },
