@@ -31,5 +31,6 @@ export class CustomerAccountDetailsComponent implements OnInit {
       this.accountNumber = res;
 
     })
+    
   }
 }

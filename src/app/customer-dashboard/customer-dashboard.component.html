@@ -2,13 +2,13 @@
 
 <button mat-raised-button color="primary" (click)="selectButton(1)" >Account Details</button><br><br>
 <button mat-raised-button color="primary" (click)="selectButton(2)" >Create Account</button><br><br>
-
+<button mat-raised-button color="primary" (click)="selectButton(3)" >View Statement</button><br><br>
 
 <!-- <button mat-raised-button color="primary" routerLink="/create-account" >Create Account</button><br><br> -->
 <button mat-raised-button color="primary" routerLink="/addbeneficiary" >Add Beneficiary</button><br><br>
 <button mat-raised-button color="primary" routerLink="/remove-beneficiary" >Remove Beneficiary</button><br><br>
 <button mat-raised-button color="primary" routerLink="/transfer" >Transfer Amount</button><br><br>
-<button mat-raised-button color="primary" routerLink="/view-statement" >View Statement</button><br><br>
+<!-- <button mat-raised-button color="primary" routerLink="/view-statement" >View Statement</button><br><br> -->
 
 
 <div class="Account Details" *ngIf= "selection==1">
@@ -23,6 +23,11 @@
 <div class="app-create-account" *ngIf= "selection==2">
 
     <app-create-account></app-create-account>
+</div>
+
+<div class="app-account-statement" *ngIf= "selection==3">
+
+    <app-account-statement></app-account-statement>
 </div>
     
     

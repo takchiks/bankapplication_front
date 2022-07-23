@@ -139,6 +139,14 @@ export class CustomerService {
     return this.http.get(`${this.baseUrl}`+"api/customer/"+customerId+"/transaction1", this.requestOptions);
   }
 
+  getCustomerAccount(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/account/"+ accountNumber.accountNumber,this.requestOptions)
+  }
+
+  getAccountTransaction(accountNumber:any){
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+accountNumber+"/transaction2",this.requestOptions)
+  }
+
 }
 
 class Tokenpojo{

@@ -1,1 +1,40 @@
 <p>account-statement works!</p>
+
+<form #accountForm="ngForm" (ngSubmit)="accountDetails(accountForm.value);  accountTransaction(accountForm.value);">
+    <mat-select type="number" name="accountNumber" placeholder="account number" required ngModel>
+    <div *ngFor="let account of customerAccountNumbers">
+        
+        <mat-option value={{account.accountNumber}}>{{account.accountNumber}}</mat-option>
+</div>
+</mat-select>
+
+<button type="submit" class="btn btn-primary">Go</button>
+
+
+    <!-- <mat-select name="accountType"  [formControl]="accountType">
+        <mat-option value="CURRENT">CURRENT</mat-option>
+        <mat-option value="SAVINGS">SAVINGS</mat-option>
+    </mat-select> -->
+</form>
+
+<div class="customerDetails" *ngIf="customerAccount != null">
+    Account Number {{customerAccount.accountNumber}}<br>
+   Account Type {{customerAccount.accountType}}<br>
+    Account Balance {{customerAccount.accountBalance}}<br>
+    <!-- Account Approval {{customerAccount.isApproved}}<br>
+    Account {{customerAccount.dateOfCreation}}<br>
+    {{customerAccount.status}}<br> -->
+
+</div>
+
+<br><br>
+<div *ngFor = "let tansaction of accountNumber" >
+
+    Transaction Date {{tansaction.date}}<br><br>
+    Transaction Reference {{tansaction.reference}}<br><br>
+    Transaction Amount {{tansaction.amount}}<br><br>
+    <!-- {{tansaction.toAcc}}
+    {{tansaction.fromAcc}}
+    {{tansaction.reason}} -->
+    Payment Type{{tansaction.paymentType}}<br><br>
+</div>
