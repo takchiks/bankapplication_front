@@ -26,6 +26,7 @@ export class CustomerDashboardComponent implements OnInit {
   // this.router.navigate([('/create-account')])
   this.service.getUser().subscribe(res=>{
     this.customer = res;
+    alert(this.customer)
 
   this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
     this.accounts = res;
@@ -50,8 +51,8 @@ createAccount(form:any){
 }
 
 selectButton(num:any){
-  alert("hit select button")
-  this.selection==num;
+  alert(num)
+  this.selection=num;
   alert(this.selection)
 }
 

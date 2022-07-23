@@ -41,10 +41,6 @@ const routes: Routes = [
     component: CustomerDashboardComponent
   },
   {
-    path:"create-account",
-    component:CreateAccountComponent
-  },
-  {
     path:"validate-details",
     component:ValidateDetailsComponent
   },
