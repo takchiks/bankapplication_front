@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http'
 import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs';
+ 
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,7 @@ import { catchError } from 'rxjs';
 export class CustomerService {
   baseUrl: string = "http://localhost:8080/";
   ben: any;
+  usernameForForgotPassword:any;
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -117,6 +120,7 @@ export class CustomerService {
   }
 
 
+
   getAllBeneficiary(customerId:any) {
     return this.http.get(`${this.baseUrl}` + "api/customer/"+customerId+"/beneficiary", this.requestOptions);
   }
@@ -153,6 +157,14 @@ export class CustomerService {
 
   getAccountTransaction(accountNumber:any){
     return this.http.get(`${this.baseUrl}`+"api/customer/"+accountNumber+"/transaction2",this.requestOptions)
+  }
+
+  setUserNameforForgotPassword(username:any){
+    this.usernameForForgotPassword = username;
+  }
+
+  getUserNameforForgotPassword() {
+    return this.usernameForForgotPassword;
   }
 
 }

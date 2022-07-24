@@ -9,12 +9,18 @@ import { CustomerService } from '../customer.service';
 })
 export class ForgotPasswordComponent implements OnInit {
   customer:any;
-  constructor(private service:CustomerService, private router:Router) { }
+  usernameForForgotPassword:any;
+  constructor(public service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
+    // this.service.getUserNameforForgotPassword().subscribe((res: any)=>{
+    //   this.usernameForForgotPassword = res;
+    //   alert(this.usernameForForgotPassword);
+    // })
   }
 
   doreset(form:any){
+
     this.service.doreset(form).subscribe(res=>{
       this.customer = res;
       console.log(this.customer)

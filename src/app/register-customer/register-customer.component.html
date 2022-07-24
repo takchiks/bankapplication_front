@@ -101,7 +101,10 @@ credits
   </mat-form-field><br>
   <mat-form-field appearance="fill">
     <mat-label>Secret Question</mat-label>
-    <input matInput name="secret_question" required ngModel>
+    <mat-select name="secret_question" required ngModel>
+      <mat-option value="Favorite City">Which is your favorite city?</mat-option>
+      <mat-option value="Favorite Country">Which is your favorite country?</mat-option>
+    </mat-select>
   </mat-form-field><br>
   <mat-form-field appearance="fill">
       <mat-label>Secret Answer</mat-label>
