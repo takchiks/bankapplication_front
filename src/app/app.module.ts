@@ -34,6 +34,8 @@ import { CustomerAccountApprovalComponent } from './customer-account-approval/cu
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import {MatSelectModule} from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table'  
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 
 
@@ -76,7 +78,9 @@ import { AccountStatementComponent } from './account-statement/account-statement
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

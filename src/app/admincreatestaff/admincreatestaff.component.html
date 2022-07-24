@@ -17,22 +17,26 @@
                 <mat-label>Fullname</mat-label>
                 <input matInput name="fullName" formControlName="fullName">
             </mat-form-field><br>
-            <mat-form-field appearance="fill" class="item">
+            <!-- <mat-form-field appearance="fill" class="item">
                 <mat-label>Status</mat-label>
                 <mat-select name="status"  [formControl]="status">
                     <mat-option value="ENABLE">ENABLE</mat-option>
                     <mat-option value="DISABLE">DISABLE</mat-option>
                 </mat-select>
-            </mat-form-field><br>
-            <mat-form-field appearance="fill" class="item">
+            </mat-form-field><br> -->
+            <!-- <mat-form-field appearance="fill" class="item">
                 <mat-label>Role</mat-label>
                 <mat-select [formControl]="role" name="role">
-                    <mat-option value="STAFF">STAFF</mat-option>
+                    <mat-option value="STAFF">STAFF</mat-option> -->
                     <!-- <mat-option value="CUSTOME">STAFF</mat-option>
                     <mat-option value="ADMIN">ADMIN</mat-option> -->
-                </mat-select>
-            </mat-form-field><br>
+                <!-- </mat-select>
+            </mat-form-field><br> -->
             <button class="item" mat-raised-button color="primary">Create Staff</button>
         </form>
+    </div>
+    <div>
+    <a mat-raised-button  color="primary" routerLink="/approvestaff">ENABLE STAFF</a>
+    <a mat-raised-button color="primary" class="staff" routerLink="/createstaff">CREATE STAFF</a>
     </div>
 </div>

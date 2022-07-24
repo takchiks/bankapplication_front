@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       console.log("the token received is "+this.token.jwt)
       this.service.loginUser(this.token.jwt);
 
-      this.router.navigate([('')]);
+      this.router.navigate([('customerdashboard')]);
 
       /*this.service.getUser(form.userName).subscribe(res=>{
         this.user = res;
@@ -38,10 +38,6 @@ export class LoginComponent implements OnInit {
       })*/
 
     })
-  }
-
-  goStaffLogin(){
-    this.router.navigate([('staff_login')])
   }
 
 }

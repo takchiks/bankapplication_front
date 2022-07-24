@@ -74,6 +74,8 @@ export class CustomerService {
   logout() {
     //this.LoggedIn = false
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.clear()
     return true;
   }
 
@@ -110,8 +112,8 @@ export class CustomerService {
   }
 
 
-  getBeneficiary() {
-    return this.http.get(`${this.baseUrl}` + "api/staff/customer", this.requestOptions);
+  getAllBeneficiary(customerId:any) {
+    return this.http.get(`${this.baseUrl}` + "api/customer/"+customerId+"/beneficiary", this.requestOptions);
   }
 
   addBeneficiary(customerId: any, beneficary: any) {

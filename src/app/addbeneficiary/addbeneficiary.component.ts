@@ -8,11 +8,11 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./addbeneficiary.component.css']
 })
 export class AddbeneficiaryComponent implements OnInit {
-  beneficiaryDetails:any
-  accountType:any
+  beneficiaryDetails: any
+  accountType: any
   isApproved: any
 
-  constructor(private customerService:CustomerService) { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
     this.isApproved = new FormControl()
@@ -20,32 +20,31 @@ export class AddbeneficiaryComponent implements OnInit {
 
 
     this.beneficiaryDetails = new FormGroup({
-      userId:  new FormControl(this.customerService.getUserID(this.customerService.getUser()), Validators.required),
+      userId: new FormControl(this.customerService.getUserID(this.customerService.getUser()), Validators.required),
       accountNumber: new FormControl('', Validators.required)
     })
   }
-  addBeneficiary(){
-    var customer:any;
-    
-     this.customerService.getUser().subscribe(res=>{
-     customer=res
-     console.log(customer)
-    var accountType = this.accountType.value;
-    var Approved = this.isApproved.value
-    var accountNumber:number = this.beneficiaryDetails.controls.accountNumber.value;
-    console.log(new BeneficiaryPojo(accountNumber,accountType,Approved))
-    this.customerService.addBeneficiary(customer.userId,new BeneficiaryPojo(accountNumber,accountType,Approved)).subscribe(res=>{
-      console.log(new BeneficiaryPojo(accountNumber,accountType,Approved))
-      console.log(Approved)
-    })
+  addBeneficiary() {
+    var customer: any;
 
-  });
+    this.customerService.getUser().subscribe(res => {
+      customer = res
+      console.log(customer)
+      var accountType = this.accountType.value;
+      var isApproved = "NO"
+      var accountNumber: number = this.beneficiaryDetails.controls.accountNumber.value;
+      console.log(new BeneficiaryPojo(accountNumber, accountType, isApproved))
+      this.customerService.addBeneficiary(customer.userId, new BeneficiaryPojo(accountNumber, accountType, isApproved)).subscribe(res => {
+        console.log(new BeneficiaryPojo(accountNumber, accountType, isApproved))
+        console.log(isApproved)
+      })
+
+    });
 
   }
 }
-class BeneficiaryPojo{
-  constructor(private accountNumber:any, private accountType:any, private isApproved:any){
-    isApproved=isApproved
+class BeneficiaryPojo {
+  constructor(private accountNumber: any, private accountType: any, private isApproved: any) {
 
   }
 }

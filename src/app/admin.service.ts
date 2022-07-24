@@ -8,7 +8,8 @@ import { catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
-  baseUrl: string = "http://localhost:8080/";
+ 
+  baseUrl: string = "http://localhost:9090/";
   ben: any;
   header = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -16,7 +17,8 @@ export class AdminService {
   });
   requestOptions = { headers: this.header };
 
-  constructor(private http: HttpClient, private router: Router) { }
+
+  constructor(private http:HttpClient, private router: Router) { }
 
   /* errorHandler(error: HttpErrorResponse){
     return throwError(() => error.message || "Server Error");
@@ -39,11 +41,11 @@ export class AdminService {
     return this.http.post(`${this.baseUrl}` + "api/admin/authenticate", form);
   }
 
-  loginUser(token: any) {
-    //this.LoggedIn = true;
-    localStorage.setItem('token', token);
-
-  }
+   loginUser(token:any){
+     //this.LoggedIn = true;
+     localStorage.setItem('token', token);
+  
+   }
 
   // loginUser(token: any) {
   //   //this.LoggedIn = true;
@@ -61,6 +63,12 @@ export class AdminService {
     }
   }
 
+  getAllStaff(){
+    return this.http.get(`${this.baseUrl}` + "api/admin/staff", this.requestOptions);
+  }
+  enableStaff(enableBody:any){
+    return this.http.put(`${this.baseUrl}` + "api/admin/staff", enableBody, this.requestOptions);
+  }
   createAccount(form: any, customerID: any) {
     //var customer = this.getUser();
     return this.http.post(`${this.baseUrl}` + "api/customer/" + customerID + "/account", form);
@@ -146,4 +154,8 @@ class Tokenpojo {
   }
 }
 
+
+function customerId(customerId: any, any: any) {
+  throw new Error('Function not implemented.');
+}
 

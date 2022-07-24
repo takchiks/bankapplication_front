@@ -39,7 +39,16 @@ const routes: Routes = [
   },
   {
     path: "",
+    component: LoginComponent
+  },
+  {
+    path: "customerdashboard",
     component: CustomerDashboardComponent
+  },
+  {
+    path:"create-account",
+    component:CreateAccountComponent
+    // component: CustomerDashboardComponent
   },
   {
     path:"validate-details",

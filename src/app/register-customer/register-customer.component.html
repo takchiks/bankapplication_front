@@ -77,12 +77,13 @@ credits
   </p>
 </div> -->
 
+<div class="column">
+  <img mat-card-image src="/assets/images/bank.webp" alt="Photo of the Bank">
 
-
-
-<div>
-  <form #registerForm ="ngForm" (ngSubmit) = "register(registerForm.value)">
-    <mat-form-field appearance="fill">
+  <div class="register-container">
+    <p  style="font-size:30px" >Register Yourself Here</p>
+    <form #registerForm ="ngForm" (ngSubmit)="register(registerForm.value)">
+      <mat-form-field appearance="fill">
         <mat-label>User Name</mat-label>
         <input matInput name="userName" required ngModel>
       </mat-form-field><br>
@@ -106,6 +107,15 @@ credits
       <mat-label>Secret Answer</mat-label>
       <input matInput name="secret_answer" required ngModel>
     </mat-form-field><br>
-  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+      <div class="register">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+      </div>
   </form>
+
+  <br>
+
+  Already a Customer?
+  <span routerLink="/login">Sign in</span> <br><br>
+
+ 
 </div>
