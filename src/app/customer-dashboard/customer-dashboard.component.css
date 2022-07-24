@@ -1,0 +1,32 @@
+
+
+.column{
+    height:300px;
+    position: absolute;
+    width: 150px;
+    top: 20%;
+    right: 70%;
+    margin-top: -70px;
+    margin-left: -100px;
+    padding: 70px;
+    border: 3px solid black;
+  }
+
+  .container{
+    height:px;
+    position: absolute;
+    width: 200px;
+    top: 20%;
+    right: 10%;
+    margin-top: -70px;
+    margin-left: -100px;
+    padding: 70px;
+    border: 3px solid black;
+  }
+
+  mat-form-field{
+    width: 250px;
+    padding-top: 10px;
+  }
+  
+  

@@ -3,13 +3,16 @@ import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http'
 import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs';
+ 
+ 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  baseUrl: string = "http://localhost:9090/";
+  baseUrl: string = "http://localhost:8080/";
   ben: any;
+  usernameForForgotPassword:any;
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -69,7 +72,7 @@ export class CustomerService {
   getUser() {
     console.log("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token'))).pipe(catchError(this.errorHandler));
   }
 
   getUserID(customer:any){
@@ -117,6 +120,7 @@ export class CustomerService {
   }
 
 
+
   getAllBeneficiary(customerId:any) {
     return this.http.get(`${this.baseUrl}` + "api/customer/"+customerId+"/beneficiary", this.requestOptions);
   }
@@ -127,9 +131,10 @@ export class CustomerService {
   
   removeBeneficiary(customerId: any, beneficaryId: any) {
     return this.http.delete(`${this.baseUrl}` + "api/customer/" + customerId + "/beneficiary/"+beneficaryId, this.requestOptions);
-  }
-  transfer(ctransfer: any) {
-    return this.http.put(`${this.baseUrl}` + "api/customer/transfer",ctransfer, this.requestOptions);
+  } 
+
+  transfer(form: any) {
+    return this.http.put(`${this.baseUrl}` + "api/customer/transfer",form,this.requestOptions);
   }
   cupdate(customerId: any, customer:any) {
     return this.http.put(`${this.baseUrl}` + "api/customer/"+customerId,customer, this.requestOptions);
@@ -152,6 +157,18 @@ export class CustomerService {
 
   getAccountTransaction(accountNumber:any){
     return this.http.get(`${this.baseUrl}`+"api/customer/"+accountNumber+"/transaction2",this.requestOptions)
+  }
+
+  setUserNameforForgotPassword(username:any){
+    this.usernameForForgotPassword = username;
+  }
+
+  getUserNameforForgotPassword() {
+    return this.usernameForForgotPassword;
+  }
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError(() => error.message || "Server Error");
   }
 
 }

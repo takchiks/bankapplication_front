@@ -1,19 +1,18 @@
-<p>create-account works!</p>
-
 
 <div>
+  <h1><b><i><u>Create Account Form</u></i></b></h1>
     <form #accountForm ="ngForm" (ngSubmit) = "createAccount(accountForm.value)">
       <mat-form-field appearance="fill">
-          <mat-label>Account Type</mat-label>
-          <mat-select name="accountType" required ngModel>
+        <mat-label>Enter Initial Deposit</mat-label>
+        <input matInput name="accountBalance" required ngModel>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Account Type</mat-label>
+         <mat-select name="accountType" required ngModel>
             <mat-option value="CURRENT">CURRENT</mat-option>
             <mat-option value="SAVINGS">SAVINGS</mat-option>
-        </mat-select>
+        </mat-select> 
         </mat-form-field><br>
-  <mat-form-field appearance="fill">
-    <mat-label>Account Balance</mat-label>
-    <input matInput name="accountBalance" required ngModel>
-  </mat-form-field><br>
 
     <button mat-raised-button color="primary" type="submit" [disabled]="!accountForm.form.valid">Create Account</button>
     </form>

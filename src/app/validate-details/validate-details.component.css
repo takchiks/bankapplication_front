@@ -1,0 +1,35 @@
+img{
+    width: 500px;
+    float: left;
+  }
+  
+  .validateDetails-container{
+    height:400px;
+    position: absolute;
+    top: 25%;
+    left: 70%;
+    margin-top: -70px;
+    margin-left: -100px;
+    padding: 50px;
+    border: 3px solid black;
+  }
+  
+  
+  .column{
+    margin-left: 50px;
+  }
+  
+  .validateDetails{
+    text-align: right;
+  }
+  
+  mat-form-field{
+    width: 250px;
+    padding-top: 10px;
+  }
+  
+  span{
+    cursor:pointer;
+    color: blue;
+  }
+  
