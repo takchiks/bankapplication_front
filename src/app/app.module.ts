@@ -37,6 +37,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table'  
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { AccountStatementComponent } from './account-statement/account-statement
     CustomerAccountApprovalComponent,
     CustomersRegisteredComponent,
     AdminloginComponent,
-    AccountStatementComponent
+    AccountStatementComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

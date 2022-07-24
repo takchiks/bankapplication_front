@@ -1,0 +1,14 @@
+span{
+    flex: 20% 100%;
+    margin: auto;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0px;
+}
+
+/* .mat-toolbar.mat-primary {
+    background: rgb(159, 159, 159);
+    color: #fff;
+  } */
