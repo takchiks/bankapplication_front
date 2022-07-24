@@ -1,7 +1,6 @@
 <div *ngFor="let ben of beneficiary" class=container>
   <div *ngIf="ben[0]!=undefined">
     <br>
-    <br>
   <h1><b>{{ben[0].accountNumber}}</b></h1>
   <table mat-table [dataSource]="ben" class="mat-elevation-z8">
     <!-- <ng-container matColumnDef="name">
