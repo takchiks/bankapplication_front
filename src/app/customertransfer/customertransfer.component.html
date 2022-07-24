@@ -1,1 +1,39 @@
 <p>customertransfer works!</p>
+
+<div *ngFor="let account of customerAccountNumbers">
+    {{account.accountNumber}} {{account.accountBalance}} {{account.accountType}}
+</div> 
+
+<div>
+    <form #transactionForm ="ngForm" (ngSubmit) = "transferAmount(transactionForm.value)">
+      <mat-form-field appearance="fill">
+          <mat-label>From Account Number</mat-label>
+          <input matInput name="fromAcc" required ngModel>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>To Account Number</mat-label>
+          <input matInput name="toAcc" required ngModel>
+        </mat-form-field><br>
+  <mat-form-field appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput name="amount" required ngModel>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill" class="item">
+        <mat-label>Reason</mat-label>
+        <mat-select name="reason" required ngModel>
+            <mat-option value="Payment of Debts">Payment of Debts</mat-option>
+            <mat-option value="Payment of Bills">Payment of Bills</mat-option>
+            <mat-option value="Donation">Donation</mat-option>
+            <mat-option value="Credit Card Payment">Credit Card Payment</mat-option>
+            <mat-option value="Insurance">Insurance</mat-option>
+        </mat-select>
+        <!-- <input matInput name="reason" required ngModel> -->
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>Reference</mat-label>
+        <input matInput name="reference" required ngModel>
+      </mat-form-field><br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.form.valid">Transfer</button>
+    </form>
+  </div>
+

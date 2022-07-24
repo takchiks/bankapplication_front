@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-customertransfer',
@@ -6,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customertransfer.component.css']
 })
 export class CustomertransferComponent implements OnInit {
+  customer:any;
+  customerAccountNumbers:any;
 
-  constructor() { }
+  constructor(private service:CustomerService) { }
 
   ngOnInit(): void {
+    this.service.getUser().subscribe(res=>{
+      this.customer = res;
+      this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
+        this.customerAccountNumbers=res;
+      })
+    })
+  }
+
+  transferAmount(form:any){
+    alert("it came here");
+    this.service.transfer(form).subscribe(res=>{
+      alert(res);
+    })
+      alert("Amount Transferred");
+    
   }
 
 }

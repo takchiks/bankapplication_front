@@ -120,9 +120,10 @@ export class CustomerService {
   
   removeBeneficiary(customerId: any, beneficaryId: any) {
     return this.http.delete(`${this.baseUrl}` + "api/customer/" + customerId + "/beneficiary/"+beneficaryId, this.requestOptions);
-  }
-  transfer(ctransfer: any) {
-    return this.http.put(`${this.baseUrl}` + "api/customer/transfer",ctransfer, this.requestOptions);
+  } 
+
+  transfer(form: any) {
+    return this.http.put(`${this.baseUrl}` + "api/customer/transfer",form,this.requestOptions);
   }
   cupdate(customerId: any, customer:any) {
     return this.http.put(`${this.baseUrl}` + "api/customer/"+customerId,customer, this.requestOptions);
