@@ -16,6 +16,11 @@ export class CustomerService {
   });
   requestOptions = { headers: this.header };
 
+  header2 = new HttpHeaders({
+    'Content-Type': 'application/json'})
+
+    requestOptions2 = { headers: this.header2 };
+
 
   constructor(private http:HttpClient, private router: Router) { }
 
@@ -24,14 +29,14 @@ export class CustomerService {
   } */
 
   register(form: any) {
-    return this.http.post(`${this.baseUrl}` + "api/customer/register", form);
+    return this.http.post(`${this.baseUrl}` + "api/customer/register", form, this.requestOptions2);
   }
 
   token(form: any) {
 
     // this.router.navigate([('login/'+form.username+form.password)])
     //return this.http.post<{token:string}>(`${this.baseUrl}`+"api/customer/authenticate", form);
-    return this.http.post(`${this.baseUrl}` + "api/customer/authenticate", form);
+    return this.http.post(`${this.baseUrl}` + "api/customer/authenticate", form,this.requestOptions2);
   }
 
    loginUser(token:any){
@@ -64,7 +69,7 @@ export class CustomerService {
   getUser() {
     console.log("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')), this.requestOptions);
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
   }
 
   getUserID(customer:any){
