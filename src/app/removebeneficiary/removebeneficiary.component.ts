@@ -18,15 +18,18 @@ export class RemovebeneficiaryComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getUser().subscribe(res1 => {
       this.res = res1
+      console.log(this.res.userId)
       this.customerService.getAllBeneficiary(this.res.userId).subscribe(res => {
 
         this.beneficiary = res;
+
         console.log(this.beneficiary[0].benId)
       })
     })
 
   }
   removeBeneficiary(benId: any) {
+    console.log(benId)
     this.customerService.getUser().subscribe(res1 => {
       this.res = res1
       this.customerService.removeBeneficiary(this.res.userId, benId).subscribe(res => {
