@@ -1,1 +1,31 @@
-<p>customerupdate works!</p>
+<!-- <p>customerupdate works!</p> -->
+<div class=container>
+    <div>
+        <div>
+            <h1><b>Update</b></h1>
+        </div>
+        <!-- #addproductform="ngForm" -->
+        <form *ngIf="customer" [formGroup]="customer" (ngSubmit)="updateCustomer()">
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Customer ID</mat-label>
+                <input readonly="" matInput name="userId" formControlName="userId">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Full Name</mat-label>
+                <input  matInput name="fullName" formControlName="fullName">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill" class="item">
+                <mat-label>Phone</mat-label>
+                <input   matInput name="phoneNumber" formControlName="phoneNumber">
+            </mat-form-field><br><mat-form-field appearance="fill" class="item">
+                <mat-label>Security Question</mat-label>
+                <input   matInput name="secret_question" formControlName="secret_question">
+            </mat-form-field><br><mat-form-field appearance="fill" class="item">
+                <mat-label>Security Answer</mat-label>
+                <input  matInput name="secret_answer" formControlName="secret_answer">
+            </mat-form-field><br>
+            
+            <button class="item" mat-raised-button color="warn">Update</button>
+        </form>
+    </div>
+</div>
