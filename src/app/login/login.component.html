@@ -1,7 +1,9 @@
-<div class="gradient">
-  <h2>Provide your Credentials for Login!!</h2>
-  <div class="form">
-    <button (click)="goStaffLogin()">Staff Corner</button>
+<div class="column">
+  <img mat-card-image src="/assets/images/bank.webp" alt="Photo of the Bank">
+
+  
+  <div class="login-container">
+    <p  style="font-size:30px" >Login</p>
     <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
       <div class="username">
         <mat-form-field appearance="fill">
@@ -16,16 +18,15 @@
         </mat-form-field><br>
       </div>
       <div class="login">
-        <!--  <button mat-raised-button color="primary">Login</button> -->
-        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" title="Enter Username and Password" [disabled]="!loginForm.form.valid">Login</button>
       </div>
 
 
     </form>
 
-
-    <button mat-raised-button color="primary" routerLink="/validate-details" >Forgot Password</button>
-    <button mat-raised-button color="primary" routerLink="/register" >Not a Customer?Register Yourself!</button>
-    </div>
-    </div>
-    
+    <br>
+    <span routerLink="/validate-details">Forgot Password</span> <br><br>
+    Not a Customer?
+    <span routerLink="/register">Register Yourself!</span>
+  </div>
+</div>
