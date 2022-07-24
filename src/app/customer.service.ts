@@ -72,7 +72,7 @@ export class CustomerService {
   getUser() {
     console.log("inside get user")
     //var token = localStorage.getItem('token');
-    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token')));
+    return this.http.post(`${this.baseUrl}`+"api/customer/getuser",new Tokenpojo(localStorage.getItem('token'))).pipe(catchError(this.errorHandler));
   }
 
   getUserID(customer:any){
@@ -165,6 +165,10 @@ export class CustomerService {
 
   getUserNameforForgotPassword() {
     return this.usernameForForgotPassword;
+  }
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError(() => error.message || "Server Error");
   }
 
 }

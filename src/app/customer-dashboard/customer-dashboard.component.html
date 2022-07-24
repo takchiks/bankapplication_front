@@ -1,5 +1,6 @@
-<p>customer-dashboard works!</p>
+<div class="column">
 
+<div class="button">
 <button mat-raised-button color="primary" (click)="selectButton(1)" >Account Details</button><br><br>
 <button mat-raised-button color="primary" (click)="selectButton(2)" >Create Account</button><br><br>
 <button mat-raised-button color="primary" (click)="selectButton(3)" >View Statement</button><br><br>
@@ -10,16 +11,21 @@
 
 <button mat-raised-button color="primary" routerLink="/removebeneficiary" >Remove Beneficiary</button><br><br>
 
-<button mat-raised-button color="primary" routerLink="/transfer" >Transfer Amount</button><br><br>
+</div>
+</div>
+
+
 
 <div class="Account Details" *ngIf= "selection==1">
-<h1>Account Details</h1>
 <div *ngFor="let account of accounts">
+    <div class=container>
+    Account Type {{account.accountType}}
+    Account Balance {{account.accountBalance}}
+                    {{account.status}}
+    </div>
+</div>
+</div>
 
-    {{account.accountType}}
-    {{account.accountBalance}}
-</div>
-</div>
 
 <div class="app-create-account" *ngIf= "selection==2">
 
@@ -34,6 +40,9 @@
 <div class="app-customertransfer" *ngIf= "selection==4">
     <app-customertransfer></app-customertransfer>
 </div>
+
+
+
     
     
 <!-- </div> -->
