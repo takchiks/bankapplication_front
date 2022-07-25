@@ -24,7 +24,6 @@ export class CustomerAccountApprovalComponent implements OnInit {
   }
 
   approveAccount(account: any) {
-    console.log("in approve account")
     this.staffService.approveCustomerAccount(account)
       .subscribe(data => this.account = data);
     this.redirect('staff/approve/account');
