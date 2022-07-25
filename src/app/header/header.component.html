@@ -1,7 +1,19 @@
 <p>
+
+    <!-- <mat-toolbar color="primary">
+      <span routerLink=""><mat-icon>account_balance</mat-icon></span>
+      <span class="example-spacer"></span>
+      <div style="cursor:pointer; margin-left: 10px;" routerLink="/staff_login">Staff Corner</div> 
+      <div style="cursor:pointer; margin-left: 10px;" routerLink="/adminlogin">Admin Corner</div> 
+      <!-- <a *ngIf="!this.service.isLoggedIn()" routerLink="/login">Login</a> -->
+     <!-- <a *ngIf="this.service.isLoggedIn()" (click)=handleLogout()>Logout</a>
+    </mat-toolbar>
+</p> -->
   <mat-toolbar color="primary">
     <div routerLink=""><mat-icon style="font-size: 35px;" [inline]="true">account_balance</mat-icon></div>
     <span class="example-spacer"></span>
+
+    <div *ngIf="!this.service.isLoggedIn()" style="cursor:pointer; margin: 10px;" routerLink="/adminlogin">Admin Corner</div> 
     <div class="space" *ngIf="this.service.isLoggedIn()">
     <span style="cursor:pointer" *ngIf="this.service.isLoggedIn()" routerLink="/customerdashboard">Home</span>
     </div>
