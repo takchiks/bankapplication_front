@@ -1,3 +1,40 @@
 .spacer{
     flex: 3 3 auto;
 }
+
+.example-form mat-slide-toggle {
+    margin: 8px 0;
+    display: block;
+  }
+  table {
+    width: 100%;
+  }
+  div {
+    margin-top: 10px;
+    max-width: 90%;
+    margin: auto;
+    color: navy;
+}
+
+
+/* button {
+    margin-left: 65px;
+} */
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .item {
+    min-width: 300px;
+    width: 48%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+  }
+  .staff{
+    margin-left: 10px ;
+  }

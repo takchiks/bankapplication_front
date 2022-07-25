@@ -10,6 +10,7 @@ export class CustomertransferComponent implements OnInit {
   customer:any;
   customerAccountNumbers:any;
   errorMsg:any;
+  displayedColumns=["accountNumber","accountBalance","accountType"]
 
   constructor(private service:CustomerService) { }
 
@@ -21,6 +22,7 @@ export class CustomertransferComponent implements OnInit {
       })
     })
   }
+
 
   transferAmount(form:any){
     alert("it came here");

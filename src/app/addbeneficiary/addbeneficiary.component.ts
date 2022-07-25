@@ -11,6 +11,7 @@ export class AddbeneficiaryComponent implements OnInit {
   beneficiaryDetails: any
   accountType: any
   isApproved: any
+  errorMsg:any;
 
   constructor(private customerService: CustomerService) { }
 
@@ -37,6 +38,7 @@ export class AddbeneficiaryComponent implements OnInit {
       this.customerService.addBeneficiary(customer.userId, new BeneficiaryPojo(accountNumber, accountType, isApproved)).subscribe(res => {
         console.log(new BeneficiaryPojo(accountNumber, accountType, isApproved))
         console.log(isApproved)
+        this.errorMsg="Added beneficiary successfully!!"
       })
 
     });
