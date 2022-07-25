@@ -39,10 +39,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-<<<<<<< HEAD
-=======
 import {MatSidenavModule} from '@angular/material/sidenav';
->>>>>>> 181bc632edf96dea4a3c78acb8e476dd75ccd487
 
 
 @NgModule({
@@ -88,12 +85,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSelectModule,
     MatTableModule,
     MatSlideToggleModule,
-<<<<<<< HEAD
-    MatSnackBarModule
-=======
     MatSnackBarModule,
     MatSidenavModule
->>>>>>> 181bc632edf96dea4a3c78acb8e476dd75ccd487
   ],
   providers: [],
   bootstrap: [AppComponent]
