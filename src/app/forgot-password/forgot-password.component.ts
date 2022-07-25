@@ -13,10 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(public service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
-    // this.service.getUserNameforForgotPassword().subscribe((res: any)=>{
-    //   this.usernameForForgotPassword = res;
-    //   alert(this.usernameForForgotPassword);
-    // })
+    this.usernameForForgotPassword =  this.service.getUserNameforForgotPassword()
   }
 
   doreset(form:any){

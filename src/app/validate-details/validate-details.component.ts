@@ -15,17 +15,18 @@ export class ValidateDetailsComponent implements OnInit {
   }
 
   validateDetails(form:any){
-    this.service.validateDetails(form.username,form.secret_question, form.secret_answer).subscribe(res=>{
+    this.service.validateDetails(form).subscribe(res=>{
       //console.log(res);
       this.customer=res;
       console.log(this.customer);
-      this.service.setUserNameforForgotPassword(form.username);
-      alert(form.username);
-      if(this.customer ==="Details Validated"){
+      this.service.setUserNameforForgotPassword(form.userName);
+      // alert(form.userName);
+      // if(this.customer ==="Details Validated"){
+      if(this.customer.userName === form.userName){
         this.router.navigate([('/forgot-password')])
       }
       else{
-        console.log("Sorry, your username, question and answer mismatched.")
+        console.log("Sorry, your username, question and/or answer mismatched.")
       }
     });
 
