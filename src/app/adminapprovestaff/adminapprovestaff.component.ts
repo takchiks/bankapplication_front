@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class AdminapprovestaffComponent implements OnInit {
   // displayedColumns=["status","fullName"]
   displayedColumns=["userId","fullName","userName","role","status"]
 
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService, private matSnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.adminService.getAllStaff().subscribe(res=>{
@@ -28,12 +29,15 @@ export class AdminapprovestaffComponent implements OnInit {
       updateStaff.status='DISABLE'
       this.adminService.enableStaff(updateStaff).subscribe(res=>{
         this.res=res
+        this.matSnackbar.open("Successfully "+updateStaff.status,"Close")
       console.log(this.res.status)
+
       })
     }else{
       updateStaff.status='ENABLE'
       this.adminService.enableStaff(updateStaff).subscribe(res=>{
         this.res=res
+        this.matSnackbar.open("Successfully "+updateStaff.status,"Close")
       console.log(this.res.status)
       })
 
