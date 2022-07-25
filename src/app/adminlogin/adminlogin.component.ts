@@ -8,8 +8,11 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./adminlogin.component.css']
 })
 export class AdminloginComponent implements OnInit {
+  
   user:any;
   token:any;
+  errorMsg:any;
+
   constructor(private service:AdminService, private router:Router) { }
 
 
@@ -38,7 +41,7 @@ export class AdminloginComponent implements OnInit {
         }
       })*/
 
-    })
+    }, error => this.errorMsg = error.error.message)
   }
 
 

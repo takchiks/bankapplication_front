@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -11,8 +12,9 @@ export class AddbeneficiaryComponent implements OnInit {
   beneficiaryDetails: any
   accountType: any
   isApproved: any
+  errorMsg:any;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.isApproved = new FormControl()
@@ -37,6 +39,8 @@ export class AddbeneficiaryComponent implements OnInit {
       this.customerService.addBeneficiary(customer.userId, new BeneficiaryPojo(accountNumber, accountType, isApproved)).subscribe(res => {
         console.log(new BeneficiaryPojo(accountNumber, accountType, isApproved))
         console.log(isApproved)
+        this.errorMsg="Added beneficiary successfully!!"
+        this.matsnackbar.open("Added Beneficiary Successfully","DISMISS")
       })
 
     });

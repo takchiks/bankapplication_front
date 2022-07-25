@@ -1,0 +1,66 @@
+
+.container{
+    height: absolute;
+    position: absolute;
+    width: 400px;
+    top: 20%;
+    right: 20%;
+    margin-top: -40px;
+    margin-left: -100px;
+    padding: 70px;
+    border: 3px solid black;
+  }
+
+  mat-form-field{
+    width: 250px;
+    padding-top: 10px;
+  }
+
+  .customerDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .item {
+    min-width: 300px!important;
+    width: 48%;
+    padding-bottom: 2%; /* 32:18, i.e. 16:9 */
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+  .customerAccountNumbers{
+    margin-left: 10px ;
+    width: absolute;
+    height: absolute
+  }
+
+  
+  table {
+    width: absolute;
+    height: absolute;
+    width: 200px;
+  }
+ 
+  .mat-column-accountNumber {
+    width: 32px;
+    /* border-right: 1px solid currentColor; */
+    /* padding-right: 24px; */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-accountBalance {
+    padding-left: 16px;
+    /* font-size: 20px; */
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-accountType {
+    padding-left: 16px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  

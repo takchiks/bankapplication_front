@@ -1,18 +1,26 @@
-<div class=container>
-    <div>
-  
-      
-  <div><h1><b> Admin Login</b></h1></div>
-      <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
-        <mat-form-field class="item" appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput name="username" ngModel>
-        </mat-form-field><br>
-        <mat-form-field class="item" appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" name="password" ngModel>
-        </mat-form-field><br>
-        <button class="item" mat-raised-button color="primary">Login</button>
-      </form>
-    </div>
-  </div> 
+<img mat-card-image src="/assets/images/bank.webp" alt="Photo of the Bank">
+<div class="login-container">
+
+
+  <div>
+    <h1><b> Admin Login</b></h1>
+    <h3>{{errorMsg}}</h3>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
+    <mat-form-field class="item" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput name="username" ngModel>
+    </mat-form-field><br>
+    <mat-form-field class="item" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" ngModel>
+    </mat-form-field><br>
+    <button class="item" mat-raised-button color="primary" title="Enter Username and Password"
+      [disabled]="!loginForm.form.valid">Login</button>
+  </form>
+
+  <br><br>
+  <span style="color: black;">Sign in as a Customer?<br></span>
+  <span style="color: blue; cursor:pointer;" routerLink="/login">Login Here</span> <br><br>
+
+</div>

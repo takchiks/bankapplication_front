@@ -38,9 +38,8 @@ import { MatTableModule } from '@angular/material/table'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { FooterComponent } from './footer/footer.component';
-import { StaffheaderComponent } from './staffheader/staffheader.component';
-import { ApproveTransferComponent } from './approve-transfer/approve-transfer.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -87,7 +86,9 @@ import { ApproveTransferComponent } from './approve-transfer/approve-transfer.co
     ReactiveFormsModule,
     MatSelectModule,
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

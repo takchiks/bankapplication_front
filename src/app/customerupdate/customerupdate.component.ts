@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CustomerupdateComponent implements OnInit {
   customer: any
   result:any
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.customerService.getUser().subscribe(res => {
@@ -47,6 +48,7 @@ export class CustomerupdateComponent implements OnInit {
       console.log(customer)
       this.customerService.cupdate(this.customer.controls.userId.value,customer).subscribe(res=>{
         console.log(res)
+        this.matsnackbar.open("Updated Customer Successfully","DISMISS")
       })
     }
 

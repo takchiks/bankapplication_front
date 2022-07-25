@@ -22,8 +22,8 @@ export class ValidateDetailsComponent implements OnInit {
       console.log(this.customer);
       this.service.setUserNameforForgotPassword(form.userName);
       // alert(form.userName);
-      // if(this.customer ==="Details Validated"){
-      if(this.customer.userName === form.userName){
+      if(this.customer ==="Details Validated"){
+      //if(this.customer.userName === form.userName){
         this.router.navigate([('/forgot-password')])
       }
       else{

@@ -1,10 +1,20 @@
-div {
+/* div {
     max-width: 90%;
     margin: auto;
     color: navy;
+} */
+
+.login-container{
+  height:350px;
+  position: absolute;
+  top: 25%;
+  left: 70%;
+  margin-top: -70px;
+  margin-left: -200px;
+  padding: 40px;
+  border: 3px solid black;
+  text-align: center
 }
-
-
 /* button {
     margin-left: 65px;
 } */
@@ -18,8 +28,14 @@ div {
   }
   
   .item {
-    min-width: 300px!important;
+    min-width: 300px;
     width: 48%;
     padding-bottom: 2%; /* 32:18, i.e. 16:9 */
     margin-bottom: 2%; /* (100-32*3)/2 */
   }
+
+  img{
+    width: 500px;
+    float: left;
+  }
+  

@@ -7,9 +7,11 @@ import { StaffService } from '../staff.service';
   styleUrls: ['./customers-registered.component.css']
 })
 export class CustomersRegisteredComponent implements OnInit {
-
+  
+  data:any;
   customers:any 
   customer:any
+  displayedColumns=["userId","fullName","userName","role","status"]
 
   constructor( private staffService: StaffService) { }
 
@@ -25,15 +27,24 @@ export class CustomersRegisteredComponent implements OnInit {
       customer.status = "ENABLE"
     }
   }
-  enableCustomer(customer:any){
+  enableCustomer(updateCustomer:any){
     alert();
-    this.changeStatus(customer);
-    this.staffService.enableCustomer(new CustomerRequest(customer.userId,customer.status))
+    this.changeStatus(updateCustomer);
+    if(updateCustomer.status == 'ENABLE'){
+      updateCustomer.status='DISABLE'
+    this.staffService.enableCustomer(new CustomerRequest(updateCustomer.userId,updateCustomer.status))
       .subscribe(data => this.customer = data)
+    }else{
+      updateCustomer.status='ENABLE'
+      this.staffService.enableCustomer(updateCustomer).subscribe(data=>{
+        this.data=data
+      console.log(this.data.status)
+      })
+
+    }
   }
 
 }
-
 class CustomerRequest{
   constructor(
     private customerId: any,

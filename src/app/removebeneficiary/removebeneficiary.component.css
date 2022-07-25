@@ -2,16 +2,20 @@
     margin: 8px 0;
     display: block;
   }
-  table {
-    width: 100%;
-  }
+  /* table {
+     width: absolute; 
+    height: absolute; 
+    /* width: 200px; 
+  } */
   div {
-    margin-top: 10px;
+    /* margin-top: 10px;
     max-width: 90%;
     min-width: 75%;
-    margin: auto;
+    margin: auto; */
     color: navy;
 }
+
+
 
 
 /* button {
@@ -24,7 +28,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+    height: absolute;
+    /* position: absolute; */
+    width: 400px;
+    top: 20%;
+    right: 30%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right:auto;
+    padding: 70px;
+    border: 3px solid black;
+  } 
   
   .item {
     min-width: 300px!important;
@@ -35,3 +49,48 @@
   .staff{
     margin-left: 10px ;
   }
+
+  .mat-column-benId {
+    width: 32px;
+    /* border-right: 1px solid currentColor; */
+    /* padding-right: 24px; */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-accountNumber {
+    padding-left: 16px;
+    /* font-size: 20px; */
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .mat-column-accountType {
+    padding-left: 16px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-column-isApproved {
+    padding-left: 16px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-column-date {
+    padding-left: 16px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-column-delete {
+    padding-left: 16px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
