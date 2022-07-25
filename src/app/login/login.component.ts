@@ -29,15 +29,6 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate([('customerdashboard')]);
 
-      /*this.service.getUser(form.userName).subscribe(res=>{
-        this.user = res;
-        if (form.password == this.user.password){
-          this.router.navigate([("/welcome/"+form.username)]);
-        } else {
-          console.log("Please check your details and try again");
-        }
-      })*/
-
     },error=>
     this.errorMsg = error.error.message)
   }

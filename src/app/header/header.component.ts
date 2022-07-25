@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
 import { CustomerService } from '../customer.service';
+import { StaffService } from '../staff.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,18 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn = false;
 
-  constructor(private router:Router, public service:CustomerService) { }
+  isLoggedIn:boolean = false;
+  welcomeMsg = "Welcome, ";
+  staffCornerVisibility:boolean = false;
+
+  constructor(
+    private router:Router, 
+    public service:CustomerService,
+    public staffService: StaffService,
+    public adminService: AdminService
+    ) { }
+
 
   ngOnInit(): void {
   }
