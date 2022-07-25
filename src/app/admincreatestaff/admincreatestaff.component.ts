@@ -14,6 +14,7 @@ export class AdmincreatestaffComponent implements OnInit {
   adminDetails:any;
   role:any;
   status:any;
+  errorMsg:any;
 
   constructor(private adminService:AdminService, private customerService:CustomerService, private matsnackbar:MatSnackBar, private route:Router) { }
 
@@ -41,8 +42,11 @@ export class AdmincreatestaffComponent implements OnInit {
       console.log(res)
       this.matsnackbar.open("Successfully created Staff","close")
       this.redirect("/createstaff")
-    })
+    }, error => this.errorMsg = "User already present")
 
+  }
+  gotoapprovestaff(){
+    this.redirect("/approvestaff")
   }
   redirect(uri:string){
     this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>

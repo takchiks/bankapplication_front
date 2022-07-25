@@ -28,5 +28,9 @@
     width: 250px;
     padding-top: 10px;
   }
+  button{
+    width: 110%;
+    display: block;
+  }
   
   
