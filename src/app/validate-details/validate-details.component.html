@@ -1,6 +1,7 @@
 <div class="column">
   <img mat-card-image src="/assets/images/bank.webp" alt="Photo of the Bank">
   <div class="validateDetails-container">
+    <h3><i>{{customer}}</i></h3>
     <p  style="font-size:30px" >Validate Your Details Here</p>
     <form #detailsForm ="ngForm" (ngSubmit) = "validateDetails(detailsForm.value)">
       <mat-form-field appearance="fill">

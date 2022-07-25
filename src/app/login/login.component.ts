@@ -10,6 +10,7 @@ import { CustomerService } from '../customer.service';
 export class LoginComponent implements OnInit {
   user:any;
   token:any;
+  errorMsg:any;
   constructor(private service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
         }
       })*/
 
-    })
+    },error=>
+    this.errorMsg = error.error.message)
   }
 
 }

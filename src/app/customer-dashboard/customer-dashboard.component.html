@@ -17,12 +17,14 @@
 
 
 <div class="Account Details" *ngIf= "selection==1">
+    <h3>{{errorMsg}}</h3>
 <div *ngFor="let account of accounts">
     <div class=container>
     Account Type {{account.accountType}}
     Account Balance {{account.accountBalance}}
                     {{account.status}}
     </div>
+ 
 </div>
 </div>
 

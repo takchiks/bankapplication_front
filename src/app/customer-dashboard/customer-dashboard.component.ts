@@ -13,6 +13,8 @@ export class CustomerDashboardComponent implements OnInit {
   ben:any;
   accounts:any;
   selection:any;
+  message:any;
+  errorMsg:any;
 
   constructor(private service:CustomerService, private router:Router) { }
 
@@ -30,7 +32,10 @@ export class CustomerDashboardComponent implements OnInit {
 
   this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
     this.accounts = res;
-  })
+  
+  },error=>
+  this.errorMsg = error.error.message)
+  
 })
 
 }

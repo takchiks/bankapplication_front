@@ -9,6 +9,7 @@ import { CustomerService } from '../customer.service';
 })
 export class ValidateDetailsComponent implements OnInit {
   customer:any;
+  errorMsg:any;
   constructor(private service:CustomerService,private router:Router) { }
 
   ngOnInit(): void {
@@ -27,7 +28,9 @@ export class ValidateDetailsComponent implements OnInit {
       else{
         console.log("Sorry, your username, question and answer mismatched.")
       }
-    });
+    },error=>
+    this.errorMsg = error.error.message)
+  
 
   }
 
