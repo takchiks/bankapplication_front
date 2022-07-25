@@ -1,0 +1,16 @@
+.container{
+    height: absolute;
+    position: absolute;
+    width: 300px;
+    top: 20%;
+    right: 35%;
+    margin-top: -40px;
+    margin-left: -100px;
+    padding: 70px;
+    border: 3px solid black;
+  }
+
+  mat-form-field{
+    width: 250px;
+    padding-top: 10px;
+  }

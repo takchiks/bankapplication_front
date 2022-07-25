@@ -6,6 +6,7 @@
 
 <div>
     <form #transactionForm ="ngForm" (ngSubmit) = "transferAmount(transactionForm.value)">
+      <h3><i>{{errorMsg}}</i></h3>
       <mat-form-field appearance="fill">
           <mat-label>From Account Number</mat-label>
           <input matInput name="fromAcc" required ngModel>

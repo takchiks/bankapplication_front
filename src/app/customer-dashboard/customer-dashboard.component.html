@@ -6,23 +6,26 @@
 <button mat-raised-button color="primary" (click)="selectButton(3)" >View Statement</button><br><br>
 <button mat-raised-button color="primary" (click)="selectButton(4)" >Transfer Amount</button><br><br>
 
-<!-- <button mat-raised-button color="primary" routerLink="/create-account" >Create Account</button><br><br> -->
+
 <button mat-raised-button color="primary" routerLink="/addbeneficiary" >Add Beneficiary</button><br><br>
 
 <button mat-raised-button color="primary" routerLink="/removebeneficiary" >Remove Beneficiary</button><br><br>
+<button mat-raised-button color="primary" routerLink="/cupdate" >Update</button><br><br>
 
 </div>
 </div>
+
 
 
 
 <div class="Account Details" *ngIf= "selection==1">
-    <h3>{{errorMsg}}</h3>
-<div *ngFor="let account of accounts">
     <div class=container>
-    Account Type {{account.accountType}}
-    Account Balance {{account.accountBalance}}
-                    {{account.status}}
+        <h3>{{errorMsg}}</h3>
+<div *ngFor="let account of accounts">
+    Account Type: <b>{{account.accountType}}</b>
+    Account Balance: <b>{{account.accountBalance}}</b>
+    <mat-slide-toggle [checked]="account.status=='ENABLE'">{{account.status}}</mat-slide-toggle>
+    <br><br>
     </div>
  
 </div>

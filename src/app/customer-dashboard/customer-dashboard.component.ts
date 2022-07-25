@@ -15,6 +15,7 @@ export class CustomerDashboardComponent implements OnInit {
   selection:any;
   message:any;
   errorMsg:any;
+  isChecked:any;
 
   constructor(private service:CustomerService, private router:Router) { }
 

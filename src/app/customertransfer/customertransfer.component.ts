@@ -9,6 +9,7 @@ import { CustomerService } from '../customer.service';
 export class CustomertransferComponent implements OnInit {
   customer:any;
   customerAccountNumbers:any;
+  errorMsg:any;
 
   constructor(private service:CustomerService) { }
 
@@ -25,8 +26,12 @@ export class CustomertransferComponent implements OnInit {
     alert("it came here");
     this.service.transfer(form).subscribe(res=>{
       alert(res);
-    })
       alert("Amount Transferred");
+      this.errorMsg ="Amount is successfully transferred"
+    },error=>
+    this.errorMsg = error.error.message)
+    
+      
     
   }
 

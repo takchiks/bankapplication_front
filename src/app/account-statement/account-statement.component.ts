@@ -11,6 +11,8 @@ export class AccountStatementComponent implements OnInit {
   accountNumber: any;
   customer:any;
   customerAccountNumbers:any;
+  errorMsg:any;
+  displayedColumns=["date","reference","amount","paymentType"]
 
   constructor(private service:CustomerService) { }
 
@@ -19,10 +21,13 @@ export class AccountStatementComponent implements OnInit {
       this.customer = res;
       this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
         this.customerAccountNumbers=res;
-      })
+      },
+      error=>
+      this.errorMsg = error.error.message)
     })
       
   }
+
 
   accountDetails(form:any){
     alert()
