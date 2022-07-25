@@ -10,7 +10,7 @@
     </mat-toolbar>
 </p> -->
   <mat-toolbar color="primary">
-    <div routerLink=""><mat-icon style="font-size: 35px;" [inline]="true">account_balance</mat-icon></div>
+    <div><mat-icon style="font-size: 35px;" [inline]="true">account_balance</mat-icon></div>
     <span class="example-spacer"></span>
 
     <div *ngIf="!this.service.isLoggedIn()" style="cursor:pointer; margin: 10px;" routerLink="/adminlogin">Admin Corner</div> 
