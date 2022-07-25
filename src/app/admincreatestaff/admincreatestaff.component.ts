@@ -46,7 +46,7 @@ export class AdmincreatestaffComponent implements OnInit {
 
   }
   gotoapprovestaff(){
-    this.redirect("/approvestaff")
+    window.location.replace("/approvestaff")
   }
   redirect(uri:string){
     this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>

@@ -48,7 +48,8 @@ export class AdminapprovestaffComponent implements OnInit {
   }
 
   gotoapprovestaff(){
-    this.redirect("/approvestaff")
+    // this.redirect("/approvestaff")
+    window.location.replace("/approvestaff")
   }
   redirect(uri:string){
     this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
