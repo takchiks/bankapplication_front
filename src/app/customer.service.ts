@@ -112,7 +112,7 @@ export class CustomerService {
   // }
 
   validateDetails(form:any){
-    return this.http.post(`${this.baseUrl}`+"api/customer/forgotv2",form);
+    return this.http.get(`${this.baseUrl}`+"api/customer/"+form.userName+"/forgot/"+form.secret_question+"/"+form.secret_answer,{responseType:'text'});
   }
 
   doreset(form:any){

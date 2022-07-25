@@ -15,7 +15,9 @@
 
     <div *ngIf="!this.service.isLoggedIn()" style="cursor:pointer; margin: 10px;" routerLink="/adminlogin">Admin Corner</div> 
     <div class="space" *ngIf="this.service.isLoggedIn()">
-
+    <span style="cursor:pointer" *ngIf="this.service.isLoggedIn()" routerLink="/customerdashboard">Home</span>
+    </div>
+    <div class="space" *ngIf="this.service.isLoggedIn()">
       <span style="cursor:pointer" (click)=handleLogout()>Logout</span>
     </div>
     <div [hidden]="staffCornerVisibility" style="cursor:pointer" routerLink="/staff_login">Staff Corner</div> 
