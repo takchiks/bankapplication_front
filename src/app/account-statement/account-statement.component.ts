@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -14,13 +15,14 @@ export class AccountStatementComponent implements OnInit {
   errorMsg:any;
   displayedColumns=["date","reference","amount","paymentType"]
 
-  constructor(private service:CustomerService) { }
+  constructor(private service:CustomerService,private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.service.getUser().subscribe(res=>{
       this.customer = res;
       this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
         this.customerAccountNumbers=res;
+        
       },
       error=>
       this.errorMsg = error.error.message)
@@ -40,6 +42,7 @@ export class AccountStatementComponent implements OnInit {
     alert("showing account transaction")
     this.service.getAccountTransaction(form.accountNumber).subscribe(res=>{
       this.accountNumber = res;
+      //this.matsnackbar.open("Successfully Transferred Amount","DISMISS")
 
     })
     

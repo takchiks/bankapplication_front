@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RemovebeneficiaryComponent implements OnInit {
   displayedColumns = ["benId", "date", "accountNumber", "accountType", "isApproved", "delete"]
   errorMsg:any;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.customerService.getUser().subscribe(res1 => {
@@ -36,6 +37,7 @@ export class RemovebeneficiaryComponent implements OnInit {
       this.customerService.removeBeneficiary(this.res.userId, benId).subscribe(res => {
         console.log(res)
         this.errorMsg="Removed Beneficiary Successfully"
+        this.matsnackbar.open("Removed Beneficiary Successfully","DISMISS")
       })
     })
 

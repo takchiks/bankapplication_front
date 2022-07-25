@@ -1,13 +1,15 @@
 
 .validateDetails-container {
-  height:400px;
+  height:absolute;
   position: absolute;
-  height: 400px;
-  padding: 40px;
-  margin-top: -70px;
-  margin-left: -100px;
+  width:300 px;
+  right: 35%;
+  padding: 60px;
+  margin-top: auto;
+  margin-left: auto;
   border: 3px solid black;
   text-align: center
+  
 }
 
 span {
