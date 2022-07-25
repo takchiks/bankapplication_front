@@ -1,4 +1,12 @@
-<div *ngFor="let ben of beneficiary" class=container>
+<div class=container >
+
+  <h1><b><u>Remove Beneficiary</u></b></h1>
+  <h3><i>{{errorMsg}}</i></h3>
+<!-- </div> -->
+<div *ngFor="let ben of beneficiary">
+  <!-- <div>
+    <h1><b><u>Remove Beneficiary</u></b></h1>
+  </div> -->
   <div *ngIf="ben[0]!=undefined">
     <br>
   <h1><b>{{ben[0].accountNumber}}</b></h1>
@@ -52,4 +60,5 @@
   </table>
 </div>
 
+</div>
 </div>

@@ -10,6 +10,7 @@ import { CustomerService } from '../customer.service';
 })
 export class CreateAccountComponent implements OnInit {
   customer:any;
+  errorMsg:any;
   constructor(private router:Router, private http:HttpClient, private userService:CustomerService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class CreateAccountComponent implements OnInit {
     
     this.userService.createAccount(form,this.customer.userId).subscribe(res2=>{
       console.log("Account Created")
+      this.errorMsg="Account is Successfully Created!!";
     //})
     })
   })

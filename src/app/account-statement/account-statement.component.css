@@ -45,6 +45,7 @@
     width: absolute;
     height: absolute;
     width: 200px;
+    text-align: center;
   }
  
   .mat-column-date {

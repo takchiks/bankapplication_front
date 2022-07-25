@@ -12,6 +12,7 @@ export class RemovebeneficiaryComponent implements OnInit {
   // dataSource = this.staff
   // displayedColumns=["status","fullName"]
   displayedColumns = ["benId", "date", "accountNumber", "accountType", "isApproved", "delete"]
+  errorMsg:any;
 
   constructor(private customerService: CustomerService) { }
 
@@ -34,6 +35,7 @@ export class RemovebeneficiaryComponent implements OnInit {
       this.res = res1
       this.customerService.removeBeneficiary(this.res.userId, benId).subscribe(res => {
         console.log(res)
+        this.errorMsg="Removed Beneficiary Successfully"
       })
     })
 
