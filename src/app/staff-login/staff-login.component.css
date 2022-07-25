@@ -1,13 +1,20 @@
 
 .staff-login-container {
-    margin-left: 100px;
-    margin-right: 100px;
-    height: 400px;
+    height:350px;
+    position: absolute;
+    top: 25%;
+    left: 70%;
+    margin-top: -70px;
+    margin-left: -200px;
     padding: 40px;
     border: 3px solid black;
     text-align: center
   }
 
+  .column{
+    margin-left: 50px;
+  }
+  
   span {
     cursor: pointer;
     color: blue;
@@ -17,3 +24,9 @@
     width: 250px;
     padding-top: 10px;
   }
+
+  img{
+    width: 500px;
+    float: left;
+  }
+  

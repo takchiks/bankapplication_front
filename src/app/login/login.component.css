@@ -5,14 +5,15 @@ img{
 
 
 .login-container{
-  height:400px;
+  height:350px;
   position: absolute;
   top: 25%;
   left: 70%;
   margin-top: -70px;
-  margin-left: -100px;
-  padding: 50px;
+  margin-left: -200px;
+  padding: 40px;
   border: 3px solid black;
+  text-align: center
 }
 
 
@@ -21,9 +22,6 @@ img{
   margin-left: 50px;
 }
 
-.login{
-  text-align: right;
-}
 
 mat-form-field{
   width: 250px;
