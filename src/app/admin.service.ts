@@ -17,12 +17,16 @@ export class AdminService {
   });
   requestOptions = { headers: this.header };
 
+  header2 = new HttpHeaders({
+    'Content-Type': 'application/json'})
+
+    requestOptions2 = { headers: this.header2 };
 
   constructor(private http:HttpClient, private router: Router) { }
 
-  /* errorHandler(error: HttpErrorResponse){
+  errorHandler(error: HttpErrorResponse){
     return throwError(() => error.message || "Server Error");
-  } */
+  }
 
 
   register(form: any) {
@@ -38,7 +42,8 @@ export class AdminService {
 
     // this.router.navigate([('login/'+form.username+form.password)])
     //return this.http.post<{token:string}>(`${this.baseUrl}`+"api/customer/authenticate", form);
-    return this.http.post(`${this.baseUrl}` + "api/admin/authenticate", form);
+    return this.http.post(`${this.baseUrl}` + "api/admin/authenticate", form, this.requestOptions2)
+                    ;
   }
 
    loginUser(token:any){

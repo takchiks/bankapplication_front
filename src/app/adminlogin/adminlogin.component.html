@@ -4,6 +4,7 @@
 
   <div>
     <h1><b> Admin Login</b></h1>
+    <h3>{{errorMsg}}</h3>
   </div>
   <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
     <mat-form-field class="item" appearance="fill">
