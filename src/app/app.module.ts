@@ -38,6 +38,9 @@ import { MatTableModule } from '@angular/material/table'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { FooterComponent } from './footer/footer.component';
+import { StaffheaderComponent } from './staffheader/staffheader.component';
+import { ApproveTransferComponent } from './approve-transfer/approve-transfer.component';
+
 
 
 @NgModule({
@@ -65,7 +68,9 @@ import { FooterComponent } from './footer/footer.component';
     CustomersRegisteredComponent,
     AdminloginComponent,
     AccountStatementComponent,
-    FooterComponent
+    FooterComponent,
+    StaffheaderComponent,
+    ApproveTransferComponent
   ],
   imports: [
     BrowserModule,

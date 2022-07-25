@@ -1,3 +1,4 @@
+
 <div class ="container">
     <h1><i><u><b>Transactions Table</b></u></i></h1>
     <h3>{{errorMsg}}</h3>
@@ -13,7 +14,7 @@
 <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" type="submit">Show</button>
 </form>
 <br><br>
-<div class="customerDetails" *ngIf="customerAccount != null">
+<div class="accountDetails" *ngIf="customerAccount != null">
     <i>Account Number:</i> <b>{{customerAccount.accountNumber}}</b>   <i>Account Balance:</i> <b>${{customerAccount.accountBalance}}</b><br>
     
 </div>
@@ -61,4 +62,5 @@
     Payment Type{{tansaction.paymentType}}<br><br>
 </div> -->
 
+</div>
 </div>

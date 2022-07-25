@@ -9,7 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ApproveBeneficaryComponent implements OnInit {
  Beneficaries:any;
- 
+ Benficary:any
+ displayedColumns=["date","accountNumber","accountType","isApproved","accountType","approve"]
 
   constructor(private route:ActivatedRoute, private staffservice: StaffService) { }
 
@@ -38,7 +39,7 @@ console.log("inside approve bef. comm..")
     alert("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
     beneficary.isApproved = "YES"
     this.staffservice.approveBeneficaryAccount(new beneficaryRequest(beneficary.benId,beneficary.accountNumber,beneficary.date,beneficary.isApproved ))
-    .subscribe(res=>this.Beneficaries = res)
+    .subscribe(res=>this.Benficary = res)
 
   }
 

@@ -1,4 +1,5 @@
-<p>customer-account-details works!</p>
+<app-staffheader></app-staffheader><br>
+<div class= "container">
 
 <form #accountForm="ngForm" (ngSubmit)="accountDetails(accountForm.value);  accountTransaction(accountForm.value);">
 
@@ -6,9 +7,10 @@
     <button type="submit" class="btn btn-primary">Go</button>
 
 </form>
+</div>
 
 
-<div class="customerDetails" *ngIf="customerAccount != null">
+<!--div class="customerDetails" *ngIf="customerAccount != null">
     {{customerAccount.accountNumber}}<br>
     {{customerAccount.accountType}}<br>
     {{customerAccount.accountBalance}}<br>
@@ -16,10 +18,12 @@
     {{customerAccount.dateOfCreation}}<br>
     {{customerAccount.status}}<br>
 
-</div>
+
+    
+</div>-->
 
 <br><br>
-<div *ngFor = "let tansaction of accountNumber" >
+<!--div *ngFor = "let tansaction of accountNumber" >
 
     {{tansaction.date}}
     {{tansaction.reference}}
@@ -28,5 +32,67 @@
     {{tansaction.fromAcc}}
     {{tansaction.reason}}
     {{tansaction.paymentType}}
+</div>-->
+
+
+<!--form #accountForm="ngForm" (ngSubmit)="accountDetails(accountForm.value);  accountTransaction(accountForm.value);">
+    
+    <mat-select type="number" name="accountNumber" placeholder="Select Your Account" required ngModel>
+    <div *ngFor="let account of customerAccountNumbers">
+        <mat-option value={{account.accountNumber}}>{{account.accountNumber}}</mat-option>
+    </div>
+</mat-select>
+
+<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" type="submit">Show</button>
+</form>-->
+<br><br>
+<div class="" *ngIf="customerAccount != null">
+    <i>Account Number:</i> <b>{{customerAccount.accountNumber}}</b>   <i>Account Balance:</i> <b>${{customerAccount.accountBalance}}</b><br>
+    
+</div>
+<br><br>
+<div class="" *ngIf="accountNumber != null">
+    <table mat-table [dataSource]="accountNumber" class="mat-elevation-z8">
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element;">
+              {{element.date}}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="reference">
+            <th mat-header-cell *matHeaderCellDef>Reference</th>
+            <td mat-cell *matCellDef="let element;">
+              {{element.reference}}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Amount</th>
+            <td mat-cell *matCellDef="let element;">
+              {{element.amount}}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="paymentType">
+            <th mat-header-cell *matHeaderCellDef>Payment Type</th>
+            <td mat-cell *matCellDef="let element;">
+              {{element.paymentType}}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    
+
+    <tr mat-row *matRowDef="let accountNumber; columns:displayedColumns"></tr>
+
+  </table>
+
+<br><br>
+<!-- <div *ngFor = "let tansaction of accountNumber" >
+
+    Transaction Date {{tansaction.date}}<br><br>
+    Transaction Reference {{tansaction.reference}}<br><br>
+    Transaction Amount {{tansaction.amount}}<br><br>
+    Payment Type{{tansaction.paymentType}}<br><br>
+</div> -->
+
 </div>
 

@@ -11,7 +11,7 @@ export class CustomerAccountDetailsComponent implements OnInit {
 
   customerAccount: any
   accountNumber: any
-
+  displayedColumns=["date","reference","amount","paymentType"]
   constructor(
     private staffService: StaffService
   ) { }
