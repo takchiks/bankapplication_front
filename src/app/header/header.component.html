@@ -2,7 +2,8 @@
     <mat-toolbar color="primary">
       <span routerLink=""><mat-icon>account_balance</mat-icon></span>
       <span class="example-spacer"></span>
-      <div style="cursor:pointer" routerLink="/staff_login">Staff Corner</div> 
+      <div style="cursor:pointer; margin-left: 10px;" routerLink="/staff_login">Staff Corner</div> 
+      <div style="cursor:pointer; margin-left: 10px;" routerLink="/adminlogin">Admin Corner</div> 
       <!-- <a *ngIf="!this.service.isLoggedIn()" routerLink="/login">Login</a> -->
       <a *ngIf="this.service.isLoggedIn()" (click)=handleLogout()>Logout</a>
     </mat-toolbar>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
 import { CustomerService } from '../customer.service';
 
@@ -13,7 +15,7 @@ export class AdmincreatestaffComponent implements OnInit {
   role:any;
   status:any;
 
-  constructor(private adminService:AdminService, private customerService:CustomerService) { }
+  constructor(private adminService:AdminService, private customerService:CustomerService, private matsnackbar:MatSnackBar, private route:Router) { }
 
   ngOnInit(): void {
     this.role = new FormControl()
@@ -37,9 +39,15 @@ export class AdmincreatestaffComponent implements OnInit {
     console.log(new StaffPojo(fullName,userName,passWord,role,status))
     this.adminService.createStaff(new StaffPojo(fullName,userName,passWord,role,status)).subscribe(res=>{
       console.log(res)
+      this.matsnackbar.open("Successfully created Staff","close")
+      this.redirect("/createstaff")
     })
 
   }
+  redirect(uri:string){
+    this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.route.navigate([uri]));
+ }
 
 }
 

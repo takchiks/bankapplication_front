@@ -38,6 +38,8 @@ import { MatTableModule } from '@angular/material/table'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { FooterComponent } from './footer/footer.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -82,7 +84,9 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

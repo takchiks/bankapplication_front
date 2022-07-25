@@ -23,3 +23,9 @@ div {
     padding-bottom: 2%; /* 32:18, i.e. 16:9 */
     margin-bottom: 2%; /* (100-32*3)/2 */
   }
+
+  img{
+    width: 500px;
+    float: left;
+  }
+  
