@@ -26,10 +26,10 @@
   }
 
   .item {
-    min-width: 300px!important;
+    min-width: 300px;
     width: 48%;
-    padding-bottom: 2%; /* 32:18, i.e. 16:9 */
-    margin-bottom: 2%; /* (100-32*3)/2 */
+    padding-bottom: 2%;
+    margin-bottom: 2%; 
   }
   .staff{
     margin-left: 10px ;
