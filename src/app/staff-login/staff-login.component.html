@@ -1,27 +1,29 @@
-<div class="gradient">
-    <h2>Provide your Credentials for Login!!</h2>
 
+<div class="staff-login-container">
+    <h2>Login as Staff</h2>
     <h3>{{errorMsg}}</h3>
-    <div class="form">
-        <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
-            <div class="username">
-                <mat-form-field appearance="fill">
-                    <mat-label>Username</mat-label>
-                    <input type="username" matInput name="username" placeholder="username" required ngModel>
-                </mat-form-field><br>
-            </div>
-            <div class="password">
-                <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
-                    <input type="Password" matInput name="password" placeholder="Password" required ngModel>
-                </mat-form-field><br>
-            </div>
-            <div class="login">
-                <!--  <button mat-raised-button color="primary">Login</button> -->
-                <button mat-raised-button color="primary" type="submit"
-                    [disabled]="!loginForm.form.valid">Login</button>
-            </div>
+    <form #loginForm="ngForm" (ngSubmit)="dologin(loginForm.value)">
+        <div class="username">
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input type="username" matInput name="username" placeholder="username" required ngModel>
+            </mat-form-field><br>
+        </div>
+        <div class="password">
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="Password" matInput name="password" placeholder="Password" required ngModel>
+            </mat-form-field><br>
+        </div>
+        <div class="login">
+            <!--  <button mat-raised-button color="primary">Login</button> -->
+            <button mat-raised-button color="primary" type="submit" title="Enter Username and Password" [disabled]="!loginForm.form.valid">Login</button>
+        </div>
 
-        </form>
-    </div>
+    </form>
+
+    <br><br>
+    Sign in as a Customer?<br>
+  <span routerLink="/login">Login Here</span> <br><br>
+
 </div>

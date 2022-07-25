@@ -1,9 +1,15 @@
 <p>
     <mat-toolbar color="primary">
-      <span routerLink=""><mat-icon>account_balance</mat-icon></span>
+      <div routerLink=""><mat-icon style="font-size: 35px;" [inline]="true">account_balance</mat-icon></div>
       <span class="example-spacer"></span>
-      <div style="cursor:pointer" routerLink="/staff_login">Staff Corner</div> 
-      <!-- <a *ngIf="!this.service.isLoggedIn()" routerLink="/login">Login</a> -->
-      <a *ngIf="this.service.isLoggedIn()" (click)=handleLogout()>Logout</a>
+      <div class="space" *ngIf="this.service.isLoggedIn()">
+        <span style="cursor:pointer" (click)=handleLogout()>Logout</span>
+      </div>
+      <div [hidden]="staffCornerVisibility" style="cursor:pointer" routerLink="/staff_login">Staff Corner</div> 
+<!--       <div class="space" *ngIf="this.staffService.StaffIsLoggedIn()">
+        <span style="cursor:pointer">Transfer</span>
+        <span style="cursor:pointer" (click)=handleLogout()>Logout</span>
+        <span>{{welcomeMsg}}</span>
+      </div> -->
     </mat-toolbar>
 </p>

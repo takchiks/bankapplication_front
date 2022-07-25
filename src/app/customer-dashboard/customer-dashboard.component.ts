@@ -26,7 +26,7 @@ export class CustomerDashboardComponent implements OnInit {
   // this.router.navigate([('/create-account')])
   this.service.getUser().subscribe(res=>{
     this.customer = res;
-    alert(this.customer)
+    //alert(this.customer)
 
   this.service.getAllAccounts(this.customer.userId).subscribe(res=>{
     this.accounts = res;
