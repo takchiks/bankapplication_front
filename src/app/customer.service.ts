@@ -111,8 +111,8 @@ export class CustomerService {
   //   return this.http.get(`${this.baseUrl}`+"api/customer/"+id);
   // }
 
-  validateDetails(username:any, question:any, answer:any){
-    return this.http.get(`${this.baseUrl}`+"api/customer/"+username+"/forgot/"+question+"/"+answer,{responseType:'text'});
+  validateDetails(form:any){
+    return this.http.post(`${this.baseUrl}`+"api/customer/forgotv2",form);
   }
 
   doreset(form:any){
