@@ -1,11 +1,12 @@
 <div class=container>
     <div>
-            <a mat-raised-button  color="primary" routerLink="/approvestaff">ENABLE STAFF</a> 
+            <a mat-raised-button  color="primary" (click)="gotoapprovestaff()">ENABLE STAFF</a> 
             <a mat-raised-button color="primary" class="staff" routerLink="/createstaff">CREATE STAFF</a>
     </div>
     <div>
         <div>
             <h1><b>Add Staff</b></h1>
+            <h1 color="warn"><b>{{errorMsg}}</b></h1>
         </div>
         <!-- #addproductform="ngForm" -->
         <form [formGroup]="adminDetails" (ngSubmit)="createStaff()">
