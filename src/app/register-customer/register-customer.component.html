@@ -1,124 +1,43 @@
-<!-- <div class="readersack">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h3>Register yourself here</h3>
-        {{success?"Success - "+success:""}}
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label>User Name</label>
-            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
-            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
-              <div *ngIf="f.userName.errors.required">User Name is required</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
-            <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
-              <div *ngIf="f.fullName.errors.required">Full Name is required</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="number" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
-            <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
-              <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
-              <div *ngIf="f.phoneNumber.errors.number">Phone number must be a valid number</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" formControlName="passWord" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passWord.errors }" />
-            <div *ngIf="submitted && f.passWord.errors" class="invalid-feedback">
-              <div *ngIf="f.passWord.errors.required">Password is required</div>
-              <div *ngIf="f.passWord.errors.minlength">Password must be at least 6 characters</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-              <div *ngIf="f.confirmPassword.errors.mustMatch">Password and confirm not match</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Secret Question</label>
-            <input type="text" formControlName="secret_question" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secret_question.errors }" />
-            <div *ngIf="submitted && f.secret_question.errors" class="invalid-feedback">
-              <div *ngIf="f.secret_question.errors.required">Secret Question is required</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Secret Answer</label>
-            <input type="text" formControlName="secret_answer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secret_answer.errors }" />
-            <div *ngIf="submitted && f.secret_answer.errors" class="invalid-feedback">
-              <div *ngIf="f.secret_answer.errors.required">Secret Answer is required</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary">Register</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
-credits 
-<div class="text-center">
-  <p>
-    <a href="#" target="_top">Angular
-      12 - Reactive Forms Validation and confirm password Example</a>
-  </p>
-  <p>
-    <a href="https://readerstacks.com" target="_top">readerstacks.com</a>
-  </p>
-</div> -->
-
-<div class="column">
-  <img mat-card-image src="/assets/images/bank.webp" alt="Photo of the Bank">
-
-  <div class="register-container">
-    <p  style="font-size:30px" >Register Yourself Here</p>
-    <form #registerForm ="ngForm" (ngSubmit)="register(registerForm.value)">
-      <mat-form-field appearance="fill">
-        <mat-label>User Name</mat-label>
-        <input matInput name="userName" required ngModel>
-      </mat-form-field><br>
-      <mat-form-field appearance="fill">
-        <mat-label>Full Name</mat-label>
-        <input matInput name="fullName" required ngModel>
-      </mat-form-field><br>
-<mat-form-field appearance="fill">
-    <mat-label>Phone</mat-label>
-    <input matInput name="phoneNumber" required ngModel>
-  </mat-form-field><br>
-  <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
-    <input type="Password" matInput name="passWord" placeholder="Password" required ngModel>
-  </mat-form-field><br>
-  <mat-form-field appearance="fill">
-    <mat-label>Secret Question</mat-label>
-    <mat-select name="secret_question" required ngModel>
-      <mat-option value="Favorite City">Which is your favorite city?</mat-option>
-      <mat-option value="Favorite Country">Which is your favorite country?</mat-option>
-    </mat-select>
-  </mat-form-field><br>
-  <mat-form-field appearance="fill">
+<div class="register-container">
+  <p style="font-size:30px">Register</p>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+    <mat-form-field appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input matInput name="fullName" required ngModel>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput name="phoneNumber" required ngModel>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>User Name</mat-label>
+      <input matInput name="userName" required ngModel>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="Password" matInput name="passWord" placeholder="Password" required ngModel>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Secret Question</mat-label>
+      <mat-select name="secret_question" required ngModel>
+        <mat-option value="Favorite City">Which is your favorite city?</mat-option>
+        <mat-option value="Favorite Country">Which is your favorite country?</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
       <mat-label>Secret Answer</mat-label>
       <input matInput name="secret_answer" required ngModel>
     </mat-form-field><br>
-      <div class="register">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
-      </div>
+    <div class="register">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+    </div>
   </form>
 
   <br>
 
   Already a Customer?
-  <span routerLink="/login">Sign in</span> <br><br>
+  <span routerLink="/login">Login in</span> <br><br>
 
- 
+
 </div>
