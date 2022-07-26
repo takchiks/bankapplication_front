@@ -25,6 +25,7 @@ import { CustomerAccountDetailsComponent } from './customer-account-details/cust
 import { CustomerAccountApprovalComponent } from './customer-account-approval/customer-account-approval.component';
 import { CustomersRegisteredComponent } from './customers-registered/customers-registered.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -43,7 +44,8 @@ const routes: Routes = [
   },
   {
     path: "customerdashboard",
-    component: CustomerDashboardComponent
+    component: CustomerDashboardComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"create-account",
@@ -59,7 +61,8 @@ const routes: Routes = [
     component:ForgotPasswordComponent
   },{
       path:"approve-beneficary/:accountNumber",
-      component: ApproveBeneficaryComponent     
+      component: ApproveBeneficaryComponent  ,
+      canActivate:[AuthGuard]   
   },
   {
     path: "staff",
@@ -75,46 +78,57 @@ const routes: Routes = [
   // },
   {
     path: "ctransfer",
-    component: CustomertransferComponent
+    component: CustomertransferComponent,
+    canActivate:[AuthGuard]
   },  
   {
     path: "approve-beneficary",
-    component: ApproveBeneficaryComponent
+    component: ApproveBeneficaryComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "addbeneficiary",
-    component: AddbeneficiaryComponent
+    component: AddbeneficiaryComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "removebeneficiary",
-    component: RemovebeneficiaryComponent
+    component: RemovebeneficiaryComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "cupdate",
-    component: CustomerupdateComponent
+    component: CustomerupdateComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "cview",
-    component: CustomerviewaccountComponent
+    component: CustomerviewaccountComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "createstaff",
-    component: AdmincreatestaffComponent
+    component: AdmincreatestaffComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "approvestaff",
-    component: AdminapprovestaffComponent
+    component: AdminapprovestaffComponent,
+    canActivate:[AuthGuard]
   },{
     path: "staff/account",
-    component: CustomerAccountDetailsComponent
+    component: CustomerAccountDetailsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "staff/approve/account",
-    component: CustomerAccountApprovalComponent
+    component: CustomerAccountApprovalComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "staff/enable/customer",
-    component: CustomersRegisteredComponent
+    component: CustomersRegisteredComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "adminlogin",
