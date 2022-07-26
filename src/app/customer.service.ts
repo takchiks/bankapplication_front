@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
+import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
  
  
@@ -13,6 +13,9 @@ export class CustomerService {
   baseUrl: string = "http://localhost:8080/";
   ben: any;
   usernameForForgotPassword:any;
+
+  private messageSource = new BehaviorSubject('default message');
+  public currentMessageSubscriber = this.messageSource.asObservable();
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -171,6 +174,10 @@ export class CustomerService {
     return throwError(() => error.message || "Server Error");
   }
 
+  notify(message: any) {
+    this.messageSource.next("Notify")
+  }
+  
 }
 
 class Tokenpojo{

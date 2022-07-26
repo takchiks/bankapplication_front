@@ -44,7 +44,11 @@ export class AdmincreatestaffComponent implements OnInit {
     console.log(new StaffPojo(fullName,userName,passWord,role,status))
     this.adminService.createStaff(new StaffPojo(fullName,userName,passWord,role,status)).subscribe(res=>{
       console.log(res)
-      this.matsnackbar.open("Successfully created Staff","close")
+      this.matsnackbar.open("Successfully created Staff","close", {
+        duration: 3000,
+        // here specify the position
+        verticalPosition: 'top'
+      });
       this.notify({isRefresh:true});
       // this.redirect("/createstaff")
     }, error => this.errorMsg = "User already present")

@@ -33,8 +33,11 @@ export class CustomertransferComponent implements OnInit {
       console.log("Amount Transferred");
       this.errorMsg ="Amount is successfully transferred"
       this.redirect('ctransfer');
-      this.matsnackbar.open("Successfully Transferred Amount","DISMISS")
-    },error=>
+      this.matsnackbar.open("Successfully Transferred Amount","DISMISS", {
+        duration: 3000,
+        verticalPosition: 'top'
+      });
+     },error=>
     this.errorMsg = error.error.message)
     
       
