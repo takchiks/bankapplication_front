@@ -32,14 +32,14 @@ export class AccountStatementComponent implements OnInit {
 
 
   accountDetails(form:any){
-    alert()
+    console.log()
     this.service.getCustomerAccount(form).subscribe(data => 
       {this.customerAccount = data 
         console.log(this.customerAccount.accountNumber) })
   }
 
   accountTransaction(form:any){
-    alert("showing account transaction")
+    console.log("showing account transaction")
     this.service.getAccountTransaction(form.accountNumber).subscribe(res=>{
       this.accountNumber = res;
       //this.matsnackbar.open("Successfully Transferred Amount","DISMISS")

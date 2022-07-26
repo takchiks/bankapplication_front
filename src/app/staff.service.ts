@@ -2,11 +2,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs';
 import { throwError } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
+  private messageSource = new BehaviorSubject('default message');
+  public currentMessageSubscriber = this.messageSource.asObservable();
 
   baseUrl:string = "http://localhost:8080/";
   header = new HttpHeaders({
@@ -29,6 +32,10 @@ export class StaffService {
   }
   approveBeneficaryAccount(beneficary:any){
     return this.http.put(`${this.baseUrl}`+"api/staff/beneficiary", beneficary, this.requestOptions) 
+  }
+  
+  notify(message: any) {
+    this.messageSource.next("Notify")
   }
   getAccountTransaction(accountNumber:any){
     return this.http.get(`${this.baseUrl}`+"api/staff/"+accountNumber+"/transaction2",this.requestOptions)

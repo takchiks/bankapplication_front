@@ -1,3 +1,5 @@
+import { StaffheaderComponent } from './staffheader/staffheader.component';
+import { ApproveTransferComponent } from './approve-transfer/approve-transfer.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';

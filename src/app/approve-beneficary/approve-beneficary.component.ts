@@ -1,6 +1,8 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { StaffService } from './../staff.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-approve-beneficary',
@@ -10,38 +12,48 @@ import { ActivatedRoute } from '@angular/router';
 export class ApproveBeneficaryComponent implements OnInit {
  Beneficaries:any;
  Benficary:any
+ 
  displayedColumns=["date","accountNumber","accountType","isApproved","accountType","approve"]
 
-  constructor(private route:ActivatedRoute, private staffservice: StaffService) { }
+  constructor(private router: Router, private staffservice: StaffService,private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
 
-   // this.route.paramMap.subscribe(res=>{
+   console.log("inside approve bef. comm..")
+   this.staffservice.currentMessageSubscriber.subscribe(result=>{
 
-      // console.log('the data fetched from the url is ')
-       
-       // var id = res.get("benId")
-
-       // this.staffservice.getApprovedBeneficiary().subscribe(res=>{
-//
-        //  this.getBeneficary =res;
-        //})
-    //})
-console.log("inside approve bef. comm..")
+  
     this.staffservice.getApprovedBeneficiary().subscribe(res=>{
 
       this.Beneficaries = res;
     })
+  })
      
   }
-
+  
   approveBeneficary(beneficary:any){
-    alert("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
+    console.log("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
     beneficary.isApproved = "YES"
     this.staffservice.approveBeneficaryAccount(new beneficaryRequest(beneficary.benId,beneficary.accountNumber,beneficary.date,beneficary.isApproved ))
-    .subscribe(res=>this.Benficary = res)
+    .subscribe(res=>{this.Benficary = res
+      
+      this.matsnackbar.open("Beneficary Approved","close", {
+        
+        duration: 2000,
+        // here specify the position
+        verticalPosition: 'top'
+      });
+      this.staffservice.notify({isRefresh:true});
+    
+    })
 
   }
+  redirect(uri:string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate([uri]));
+ }
+
+
 
 
 }
@@ -49,6 +61,8 @@ class beneficaryRequest{
   constructor (private fromCustomer:any, private beneficiaryAcNo:any, private beneficiaryAddedDate:any, private approved:any ){
 
   }
+
+ 
 }
 
 

@@ -47,7 +47,7 @@
 </form>-->
 <br><br>
 <div class="" *ngIf="customerAccount != null">
-    <i>Account Number:</i> <b>{{customerAccount.accountNumber}}</b>   <i>Account Balance:</i> <b>${{customerAccount.accountBalance}}</b><br>
+ <h3> <i>Account Number:</i> <b> &nbsp; {{customerAccount.accountNumber}}</b> &nbsp; &nbsp; &nbsp;  &nbsp;   <i>Account Balance:</i> &nbsp; <b>${{customerAccount.accountBalance}}</b></h3> <br> 
     
 </div>
 <br><br>
@@ -56,7 +56,7 @@
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef>Date</th>
             <td mat-cell *matCellDef="let element;">
-              {{element.date}}
+               {{element.date | date:"MM/dd/yyyy 'at' h:mma "}}
             </td>
           </ng-container>
           <ng-container matColumnDef="reference">
