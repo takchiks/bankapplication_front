@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -14,14 +15,16 @@ export class AdminapprovestaffComponent implements OnInit {
   // displayedColumns=["status","fullName"]
   displayedColumns=["userId","fullName","userName","role","status"]
 
-  constructor(private adminService:AdminService, private matSnackbar:MatSnackBar) { }
+  constructor(private adminService:AdminService, private matSnackbar:MatSnackBar, private route:Router) { }
 
   ngOnInit(): void {
+    
     this.adminService.getAllStaff().subscribe(res=>{
 
       this.staff = res;
       console.log(this.staff[0].fullName)
     })
+    console.log(this.staff)
      
   } 
   enableStaff(updateStaff:any){
@@ -43,5 +46,15 @@ export class AdminapprovestaffComponent implements OnInit {
 
     }
   }
+
+  gotoapprovestaff(){
+    // this.redirect("/approvestaff")
+    window.location.replace("/approvestaff")
+  }
+  redirect(uri:string){
+    this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.route.navigate([uri]));
+ }
+
 
 }
