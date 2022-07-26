@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
 
@@ -13,7 +14,7 @@ export class AdminloginComponent implements OnInit {
   token:any;
   errorMsg:any;
 
-  constructor(private service:AdminService, private router:Router) { }
+  constructor(private service:AdminService, private router:Router, private matSnackbar:MatSnackBar) { }
 
 
   ngOnInit(): void {
@@ -30,13 +31,18 @@ export class AdminloginComponent implements OnInit {
       console.log("the token received is "+this.token.jwt)
       this.service.loginUser(this.token.jwt);
 
+      this.matSnackbar.open("Welcome "+form.username+"!!" ,"close", {
+        duration: 3000,
+        // here specify the position
+        verticalPosition: 'top'
+      });
       this.router.navigate([('/createstaff')]);
 
       /*this.service.getUser(form.userName).subscribe(res=>{
         this.user = res;
         if (form.password == this.user.password){
           this.router.navigate([("/welcome/"+form.username)]);
-        } else {
+        } else {status
           console.log("Please check your details and try again");
         }
       })*/
