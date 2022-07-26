@@ -45,7 +45,7 @@ export class AdmincreatestaffComponent implements OnInit {
     this.adminService.createStaff(new StaffPojo(fullName,userName,passWord,role,status)).subscribe(res=>{
       console.log(res)
       this.matsnackbar.open("Successfully created Staff","close", {
-        duration: 2000,
+        duration: 3000,
         // here specify the position
         verticalPosition: 'top'
       });

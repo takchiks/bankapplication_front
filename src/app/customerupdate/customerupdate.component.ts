@@ -47,8 +47,11 @@ export class CustomerupdateComponent implements OnInit {
       secret)
       console.log(customer)
       this.customerService.cupdate(this.customer.controls.userId.value,customer).subscribe(res=>{
-        console.log(res)
-        this.matsnackbar.open("Updated Customer Successfully","DISMISS")
+        console.log(res) 
+        this.matsnackbar.open("Updated Customer Successfully","DISMISS", {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
       })
     }
 

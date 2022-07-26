@@ -40,7 +40,11 @@ export class AddbeneficiaryComponent implements OnInit {
         console.log(new BeneficiaryPojo(accountNumber, accountType, isApproved))
         console.log(isApproved)
         this.errorMsg="Added beneficiary successfully!!"
-        this.matsnackbar.open("Added Beneficiary Successfully","DISMISS")
+        this.matsnackbar.open("Added Beneficiary Successfully","DISMISS", {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
+      
       })
 
     });

@@ -13,19 +13,21 @@ export class RemovebeneficiaryComponent implements OnInit {
   // dataSource = this.staff
   // displayedColumns=["status","fullName"]
   displayedColumns = ["benId", "date", "accountNumber", "accountType", "isApproved", "delete"]
-  errorMsg:any;
+  errorMsg: any;
 
-  constructor(private customerService: CustomerService, private matsnackbar:MatSnackBar) { }
+  constructor(private customerService: CustomerService, private matsnackbar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.customerService.getUser().subscribe(res1 => {
-      this.res = res1
-      console.log(this.res.userId)
-      this.customerService.getAllBeneficiary(this.res.userId).subscribe(res => {
+    this.customerService.currentMessageSubscriber.subscribe(results => {
+      this.customerService.getUser().subscribe(res1 => {
+        this.res = res1
+        console.log(this.res.userId)
+        this.customerService.getAllBeneficiary(this.res.userId).subscribe(res => {
 
-        this.beneficiary = res;
+          this.beneficiary = res;
 
-        console.log(this.beneficiary[0].benId)
+          console.log(this.beneficiary[0].benId)
+        })
       })
     })
 
@@ -36,8 +38,13 @@ export class RemovebeneficiaryComponent implements OnInit {
       this.res = res1
       this.customerService.removeBeneficiary(this.res.userId, benId).subscribe(res => {
         console.log(res)
-        this.errorMsg="Removed Beneficiary Successfully"
-        this.matsnackbar.open("Removed Beneficiary Successfully","DISMISS")
+        this.errorMsg = "Removed Beneficiary Successfully"
+
+        this.matsnackbar.open("Removed Beneficiary Successfully", "DISMISS", {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
+        this.customerService.notify({ isRefresh: true });
       })
     })
 

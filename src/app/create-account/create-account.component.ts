@@ -29,7 +29,10 @@ export class CreateAccountComponent implements OnInit {
       console.log("Account Created")
       this.redirect('/create-account');
       this.errorMsg="Account is Successfully Created!!";
-      this.matsnackbar.open("Successfully Created Account","DISMISS")
+      this.matsnackbar.open("Successfully Created Account","DISMISS", {
+        duration: 3000,
+        verticalPosition: 'top'
+      });
     //})
     })
   })
