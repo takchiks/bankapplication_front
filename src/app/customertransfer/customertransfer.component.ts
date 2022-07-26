@@ -27,10 +27,10 @@ export class CustomertransferComponent implements OnInit {
 
 
   transferAmount(form:any){
-    alert("it came here");
+    console.log("it came here");
     this.service.transfer(form).subscribe(res=>{
-      alert(res);
-      alert("Amount Transferred");
+      console.log(res);
+      console.log("Amount Transferred");
       this.errorMsg ="Amount is successfully transferred"
       this.redirect('ctransfer');
       this.matsnackbar.open("Successfully Transferred Amount","DISMISS", {

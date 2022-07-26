@@ -36,7 +36,7 @@ console.log("inside approve bef. comm..")
   }
 
   approveBeneficary(beneficary:any){
-    alert("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
+    console.log("in approve account"+ beneficary.benId+ " "+ beneficary.accountType+" "+" "+beneficary.accountNumber)
     beneficary.isApproved = "YES"
     this.staffservice.approveBeneficaryAccount(new beneficaryRequest(beneficary.benId,beneficary.accountNumber,beneficary.date,beneficary.isApproved ))
     .subscribe(res=>this.Benficary = res)

@@ -28,7 +28,7 @@ export class CustomersRegisteredComponent implements OnInit {
     }
   }
   enableCustomer(updateCustomer:any){
-    alert();
+    console.log();
     this.changeStatus(updateCustomer);
     if(updateCustomer.status == 'ENABLE'){
       updateCustomer.status='DISABLE'
