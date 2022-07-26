@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { AdminService } from '../admin.service';
 import { CustomerService } from '../customer.service';
 
@@ -15,6 +16,9 @@ export class AdmincreatestaffComponent implements OnInit {
   role:any;
   status:any;
   errorMsg:any;
+  private messageSource = new BehaviorSubject('default message');
+  public currentMessageSubscriber = this.messageSource.asObservable();
+
 
   constructor(private adminService:AdminService, private customerService:CustomerService, private matsnackbar:MatSnackBar, private route:Router) { }
 
@@ -41,7 +45,8 @@ export class AdmincreatestaffComponent implements OnInit {
     this.adminService.createStaff(new StaffPojo(fullName,userName,passWord,role,status)).subscribe(res=>{
       console.log(res)
       this.matsnackbar.open("Successfully created Staff","close")
-      this.redirect("/createstaff")
+      this.notify({isRefresh:true});
+      // this.redirect("/createstaff")
     }, error => this.errorMsg = "User already present")
 
   }
@@ -52,6 +57,11 @@ export class AdmincreatestaffComponent implements OnInit {
     this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
     this.route.navigate([uri]));
  }
+
+
+notify(message: any) {
+  this.messageSource.next("Notify")
+}
 
 }
 
