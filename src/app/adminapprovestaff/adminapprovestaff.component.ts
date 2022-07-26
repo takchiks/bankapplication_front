@@ -34,7 +34,7 @@ export class AdminapprovestaffComponent implements OnInit {
         this.res=res
 
       this.matSnackbar.open("Successfully "+updateStaff.status+"D "+updateStaff.fullName,"close", {
-        duration: 2000,
+        duration: 3000,
         // here specify the position
         verticalPosition: 'top'
       });
