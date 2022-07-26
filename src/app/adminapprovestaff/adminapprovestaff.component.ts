@@ -33,7 +33,7 @@ export class AdminapprovestaffComponent implements OnInit {
       this.adminService.enableStaff(updateStaff).subscribe(res=>{
         this.res=res
 
-      this.matSnackbar.open("Successfully "+updateStaff.status,"close", {
+      this.matSnackbar.open("Successfully "+updateStaff.status+"D "+updateStaff.fullName,"close", {
         duration: 2000,
         // here specify the position
         verticalPosition: 'top'
@@ -45,8 +45,8 @@ export class AdminapprovestaffComponent implements OnInit {
       updateStaff.status='ENABLE'
       this.adminService.enableStaff(updateStaff).subscribe(res=>{
         this.res=res
-        this.matSnackbar.open("Successfully "+updateStaff.status,"close", {
-          duration: 2000,
+        this.matSnackbar.open("Successfully "+updateStaff.status+"D "+updateStaff.fullName,"close", {
+          duration: 3000,
           // here specify the position
           verticalPosition: 'top'
         });
