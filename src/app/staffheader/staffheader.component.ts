@@ -26,7 +26,8 @@ export class StaffheaderComponent implements OnInit {
     ApproveBeneficiary(){
   
       console.log("inside approve beneficary page")
-  
+      this.staffservice.notify({isRefresh:true})
+      window.location.replace('/approve-beneficary')
       this.router.navigate([('/approve-beneficary')])
     }
     ByAccountNumber(){

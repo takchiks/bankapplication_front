@@ -11,7 +11,7 @@ export class StaffService {
   private messageSource = new BehaviorSubject('default message');
   public currentMessageSubscriber = this.messageSource.asObservable();
 
-  baseUrl:string = "http://localhost:9090/";
+  baseUrl:string = "http://localhost:8080/";
   header = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`

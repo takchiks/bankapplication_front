@@ -24,6 +24,9 @@ export class StaffComponent implements OnInit {
   }
 
   ApproveBeneficiary() {
+
+    this.staffservice.notify({isRefresh:true})
+    window.location.replace('/approve-beneficary')
     this.router.navigate([('/approve-beneficary')])
   }
 
